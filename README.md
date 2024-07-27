@@ -1,6 +1,6 @@
 # personal_blog
 
-This template should help get you started developing with Vue 3 in Vite.
+JK Wu's personal blog based on Vue3 + TS + Pinia ...
 
 ## Recommended IDE Setup
 
