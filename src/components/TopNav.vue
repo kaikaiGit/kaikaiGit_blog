@@ -53,7 +53,7 @@ const NavToRecommend = (): void => {
 
 <style lang="scss" scoped>
 .nav {
-  padding: 0 30px;
+  padding: 0 24px;
   gap: 10px;
 }
 </style>
