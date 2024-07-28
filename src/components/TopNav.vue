@@ -7,14 +7,17 @@
     @select="handleSelect"
     :active-text-color="myColor.themeColor"
   >
-    <div class="flex-vertical">
-      <img src="@/assets/images/logo/logo.svg" alt="blog" />
-    </div>
+    <router-link to="/" index="0">
+      <el-menu-item index="0" class="flex-vertical" style="height: 100%; padding: 0">
+        <img src="@/assets/images/logo/logo.svg" alt="blog" />
+      </el-menu-item>
+    </router-link>
+
     <div class="flex-grow" />
 
-    <el-menu-item index="1">作品</el-menu-item>
+    <el-menu-item index="1" @click="NavToCollections"> 作品 </el-menu-item>
 
-    <el-menu-item index="2">推荐</el-menu-item>
+    <el-menu-item index="2" @click="NavToRecommend"> 推荐 </el-menu-item>
 
     <ThemeSwitch style="margin: 0 20px 0 10px" @click="handleToggle" />
 
@@ -32,10 +35,19 @@
 <script setup lang="ts">
 import { myColor } from '@/assets/themes'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const isDark = ref(false)
 const handleToggle = (): void => {
   isDark.value = !isDark.value
+}
+
+const router = useRouter()
+const NavToCollections = (): void => {
+  router.push('/collections')
+}
+const NavToRecommend = (): void => {
+  router.push('/recommend')
 }
 </script>
 
