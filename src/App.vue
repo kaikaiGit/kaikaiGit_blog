@@ -4,8 +4,10 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>nihao</div>
-  <ThemeSwitch />
+  <!-- 导航栏 -->
+  <top-nav></top-nav>
+  <!-- 内容 -->
+  <router-view></router-view>
 </template>
 
 <style scoped></style>

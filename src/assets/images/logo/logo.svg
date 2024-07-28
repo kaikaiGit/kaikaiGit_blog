@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="0 0 200 90">
+  <!-- 叶子图标 -->
+  <path d="M50,50 C40,30 30,20 20,30 C10,40 15,60 25,50 C35,40 45,30 50,50 Z" fill="#B7D9B1"        stroke="#B7D9B1" stroke-width="2"/>
+  <!-- 绿色文字 -->
+  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="36" fill="#B7D9B1" text-anchor="middle" alignment-baseline="middle">
+    <tspan dy="0" x="43%">B</tspan>
+    <tspan dy="0" x="57%">log</tspan>
+  </text>
+
+  <!-- 绿色装饰（如叶子元素） -->
+  <path d="M140,60 C130,50 120,40 110,50 C100,60 90,70 80,60" fill="none" stroke="#B7D9B1" stroke-width="2"/>
+  <circle cx="110" cy="50" r="5" fill="#B7D9B1"/>
+</svg>

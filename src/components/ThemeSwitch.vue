@@ -1,5 +1,5 @@
 <template>
-  <div class="env-box" style="height: 100%; width: 330px">
+  <div class="env-box">
     <el-switch
       v-model="isdark"
       size="large"
@@ -34,4 +34,11 @@ const toggleDark = useToggle(isDark)
 const isdark = ref(isDark)
 </script>
 
-<style></style>
+<style>
+.env-box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 50px;
+}
+</style>

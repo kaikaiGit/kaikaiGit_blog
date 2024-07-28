@@ -1,6 +1,13 @@
 /* 全局通用css样式 */
 @import './base.css';
 
+//夜间模式主题
+.dark {
+  background-color: var(--darkBgc);
+  color: var(--darkTxtColor);
+}
+
+//全局css变量
 :root {
   --darkBgc: #141414;
   --darkTxtColor: #cfd3dc;
@@ -8,10 +15,21 @@
 }
 
 :root {
+  --themeColor: #b7d9b1;
+  --themeColor-light: #f0f9eb;
 }
 
-//夜间模式主题
-.dark {
-  background-color: var(--darkBgc);
-  color: var(--darkTxtColor);
+//用于覆盖element-ui的主题色
+:root {
+  --el-menu-hover-bg-color: transparent;
+  --el-menu-hover-text-color: #b7d9b1;
+}
+
+//通用css类
+.flex-grow {
+  flex: 1;
+}
+.flex-vertical {
+  display: flex;
+  align-items: center;
 }
