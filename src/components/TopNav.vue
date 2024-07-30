@@ -37,11 +37,13 @@ import { myColor } from '@/assets/themes'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+/* 主题切换相关 */
 const isDark = ref(false)
 const handleToggle = (): void => {
   isDark.value = !isDark.value
 }
 
+/* 路由跳转相关 */
 const router = useRouter()
 const NavToCollections = (): void => {
   router.push('/collections')
