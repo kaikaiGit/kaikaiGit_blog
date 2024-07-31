@@ -4,8 +4,8 @@ import App from './App.vue'
 import router from './router'
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+// import 'bootstrap/dist/css/bootstrap.min.css' //使用bootstrap
 import 'element-plus/theme-chalk/dark/css-vars.css' //使用黑暗模式
-import 'bootstrap/dist/css/bootstrap.min.css' //使用bootstrap
 import '@/assets/css/common.scss'
 import pinia from './stores'
 

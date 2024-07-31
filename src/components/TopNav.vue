@@ -1,13 +1,11 @@
 <template>
   <el-menu
-    :default-active="activeIndex"
     class="el-menu-demo nav"
     mode="horizontal"
     :ellipsis="false"
-    @select="handleSelect"
     :active-text-color="myColor.themeColor"
   >
-    <router-link to="/" index="0">
+    <router-link to="/">
       <el-menu-item index="0" class="flex-vertical" style="height: 100%; padding: 0">
         <img src="@/assets/images/logo/logo.svg" alt="blog" />
       </el-menu-item>
@@ -36,6 +34,7 @@
 import { myColor } from '@/assets/themes'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+// import { useViewportStore } from '../stores/viewPort'
 
 /* 主题切换相关 */
 const isDark = ref(false)
@@ -51,6 +50,9 @@ const NavToCollections = (): void => {
 const NavToRecommend = (): void => {
   router.push('/recommend')
 }
+
+/* 移动设备相关 */
+// const viewportStore = useViewportStore()
 </script>
 
 <style lang="scss" scoped>
