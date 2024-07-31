@@ -4,6 +4,7 @@ import App from './App.vue'
 import router from './router'
 
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import 'virtual:svg-icons-register' //引入svg-icons
 // import 'bootstrap/dist/css/bootstrap.min.css' //使用bootstrap
 import 'element-plus/theme-chalk/dark/css-vars.css' //使用黑暗模式
 import '@/assets/css/common.scss'

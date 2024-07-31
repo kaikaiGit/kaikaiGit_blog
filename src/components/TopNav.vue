@@ -7,26 +7,46 @@
   >
     <router-link to="/">
       <el-menu-item index="0" class="flex-vertical" style="height: 100%; padding: 0">
-        <img src="@/assets/images/logo/logo.svg" alt="blog" />
+        <!-- <img src="@/assets/images/logo/logo.svg" alt="blog" /> -->
+        <SvgIcon
+          iconClass="logo"
+          :style="{ width: '100px', height: '100%', color: myColor.themeColor }"
+        />
       </el-menu-item>
     </router-link>
 
     <div class="flex-grow" />
 
-    <el-menu-item index="1" @click="NavToCollections"> 作品 </el-menu-item>
+    <el-menu-item v-if="!viewportStore.isMobile" index="1" @click="NavToCollections">
+      作品
+    </el-menu-item>
 
-    <el-menu-item index="2" @click="NavToRecommend"> 推荐 </el-menu-item>
+    <el-menu-item v-if="!viewportStore.isMobile" index="2" @click="NavToRecommend">
+      推荐
+    </el-menu-item>
 
-    <ThemeSwitch style="margin: 0 20px 0 10px" @click="handleToggle" />
+    <ThemeSwitch style="margin: 0 10px" @click="handleToggle" />
 
     <a
+      v-if="!viewportStore.isMobile"
       class="flex-vertical"
       href="https://github.com/kaikaiGit/kaikaiGit.github.io"
       target="_blank"
+      style="padding: 10px"
     >
-      <img v-if="!isDark" src="@/assets/images/topNav/githubIcon.svg" alt="github" width="30" />
-      <img v-else src="@/assets/images/topNav/githubBlack.svg" alt="github" width="30" />
+      <SvgIcon
+        v-if="!isDark"
+        iconClass="githubIcon"
+        :style="{ width: '30px', height: '100%', color: 'black' }"
+      />
+      <SvgIcon v-else iconClass="githubBlack" :style="{ width: '30px', height: '100%' }" />
+      <!-- <img v-if="!isDark" src="@/assets/images/topNav/githubIcon.svg" alt="github" width="30" />
+      <img v-else src="@/assets/images/topNav/githubBlack.svg" alt="github" width="30" /> -->
     </a>
+    <div v-else class="flex-vertical" style="padding: 10px">
+      <SvgIcon v-if="!isDark" iconClass="menu" style="height: 20px; width: 20px" />
+      <SvgIcon v-else iconClass="menuBlack" style="height: 20px; width: 20px" />
+    </div>
   </el-menu>
 </template>
 
@@ -34,7 +54,7 @@
 import { myColor } from '@/assets/themes'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-// import { useViewportStore } from '../stores/viewPort'
+import { useViewportStore } from '../stores/viewPort'
 
 /* 主题切换相关 */
 const isDark = ref(false)
@@ -52,12 +72,12 @@ const NavToRecommend = (): void => {
 }
 
 /* 移动设备相关 */
-// const viewportStore = useViewportStore()
+const viewportStore = useViewportStore()
 </script>
 
 <style lang="scss" scoped>
 .nav {
-  padding: 0 24px;
+  padding: 0 20px;
   gap: 10px;
 }
 </style>
