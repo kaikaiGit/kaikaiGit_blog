@@ -4,6 +4,8 @@
     mode="horizontal"
     :ellipsis="false"
     :active-text-color="myColor.themeColor"
+    menu-trigger="click"
+    close-on-click-outside
   >
     <router-link to="/">
       <el-menu-item index="0" class="flex-vertical" style="height: 100%; padding: 0">
@@ -30,7 +32,7 @@
     <a
       v-if="!viewportStore.isMobile"
       class="flex-vertical"
-      href="https://github.com/kaikaiGit/kaikaiGit.github.io"
+      href="https://github.com/kaikaiGit/kaikaiGit_blog"
       target="_blank"
       style="padding: 10px"
     >
@@ -40,13 +42,34 @@
         :style="{ width: '30px', height: '100%', color: 'black' }"
       />
       <SvgIcon v-else iconClass="githubBlack" :style="{ width: '30px', height: '100%' }" />
-      <!-- <img v-if="!isDark" src="@/assets/images/topNav/githubIcon.svg" alt="github" width="30" />
-      <img v-else src="@/assets/images/topNav/githubBlack.svg" alt="github" width="30" /> -->
     </a>
     <div v-else class="flex-vertical" style="padding: 10px">
       <SvgIcon v-if="!isDark" iconClass="menu" style="height: 20px; width: 20px" />
       <SvgIcon v-else iconClass="menuBlack" style="height: 20px; width: 20px" />
     </div>
+
+    <el-sub-menu index="4">
+      <template #title
+        ><SvgIcon v-if="!isDark" iconClass="menu" style="height: 20px; width: 20px"
+      /></template>
+      <el-menu-item index="4-1">作品</el-menu-item>
+      <el-menu-item index="4-2">推荐</el-menu-item>
+      <el-menu-item index="4-3"
+        ><a
+          v-if="!viewportStore.isMobile"
+          class="flex-vertical"
+          href="https://github.com/kaikaiGit/kaikaiGit_blog"
+          target="_blank"
+          style="padding: 10px"
+        >
+          <SvgIcon
+            v-if="!isDark"
+            iconClass="githubIcon"
+            :style="{ width: '30px', height: '100%', color: 'black' }"
+          />
+          <SvgIcon v-else iconClass="githubBlack" :style="{ width: '30px', height: '100%' }" /> </a
+      ></el-menu-item>
+    </el-sub-menu>
   </el-menu>
 </template>
 
