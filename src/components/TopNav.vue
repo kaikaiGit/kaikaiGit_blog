@@ -3,17 +3,14 @@
     class="el-menu-demo nav"
     mode="horizontal"
     :ellipsis="false"
-    :active-text-color="myColor.themeColor"
+    active-text-color="var(--themeColor)"
     menu-trigger="click"
     close-on-click-outside
   >
     <router-link to="/">
       <el-menu-item index="0" class="flex-vertical" style="height: 100%; padding: 0">
         <!-- <img src="@/assets/images/logo/logo.svg" alt="blog" /> -->
-        <SvgIcon
-          iconClass="logo"
-          :style="{ width: '100px', height: '100%', color: myColor.themeColor }"
-        />
+        <SvgIcon iconClass="logo" style="width: 100px; height: 100%; color: var(--themeColor)" />
       </el-menu-item>
     </router-link>
 
@@ -47,34 +44,10 @@
       <SvgIcon v-if="!isDark" iconClass="menu" style="height: 20px; width: 20px" />
       <SvgIcon v-else iconClass="menuBlack" style="height: 20px; width: 20px" />
     </div>
-
-    <el-sub-menu index="4">
-      <template #title
-        ><SvgIcon v-if="!isDark" iconClass="menu" style="height: 20px; width: 20px"
-      /></template>
-      <el-menu-item index="4-1">作品</el-menu-item>
-      <el-menu-item index="4-2">推荐</el-menu-item>
-      <el-menu-item index="4-3"
-        ><a
-          v-if="!viewportStore.isMobile"
-          class="flex-vertical"
-          href="https://github.com/kaikaiGit/kaikaiGit_blog"
-          target="_blank"
-          style="padding: 10px"
-        >
-          <SvgIcon
-            v-if="!isDark"
-            iconClass="githubIcon"
-            :style="{ width: '30px', height: '100%', color: 'black' }"
-          />
-          <SvgIcon v-else iconClass="githubBlack" :style="{ width: '30px', height: '100%' }" /> </a
-      ></el-menu-item>
-    </el-sub-menu>
   </el-menu>
 </template>
 
 <script setup lang="ts">
-import { myColor } from '@/assets/themes'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useViewportStore } from '../stores/viewPort'

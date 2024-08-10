@@ -5,8 +5,8 @@
       size="large"
       inline-prompt
       :style="{
-        '--el-switch-on-color': myColor.darkInputBgc,
-        '--el-switch-off-color': myColor.inputBgc
+        '--el-switch-on-color': 'var(--darkInputBgc)',
+        '--el-switch-off-color': 'var(--inputBgc)'
       }"
     >
       <template #active-action>
@@ -26,7 +26,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useDark, useToggle } from '@vueuse/core' //主题切换相关
-import { myColor } from '@/assets/themes'
 
 //主题切换相关
 const isDark = useDark()

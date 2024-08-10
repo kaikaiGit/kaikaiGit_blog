@@ -2,16 +2,19 @@
 @import './base.css';
 
 //夜间模式主题
-.dark {
+:root.dark {
   background-color: var(--darkBgc);
   color: var(--darkTxtColor);
 }
 
 //全局css变量
 :root {
+  --bgc: #fff;
   --darkBgc: #141414;
+  --txtColor: #000;
   --darkTxtColor: #cfd3dc;
   --darkInputBgc: #2c2c2c;
+  --inputBgc: #f2f2f2;
 }
 
 :root {
