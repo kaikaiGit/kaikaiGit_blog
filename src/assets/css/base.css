@@ -145,9 +145,16 @@ sub {
   bottom: -0.25em;
 }
 /* 默认不显示下划线，保持页面简洁 */
-ins,
-a {
+ins {
   text-decoration: none;
+}
+a {
+  color: inherit; /* 移除默认的文本颜色 */
+  text-decoration: none; /* 移除下划线 */
+  background-color: transparent; /* 移除背景色 */
+  font-weight: inherit; /* 移除默认的字体加粗 */
+  font-size: inherit; /* 移除默认的字体大小 */
+  font-family: inherit; /* 移除默认的字体族 */
 }
 /* 去除 ie6 & ie7 焦点点状线 */
 a:focus,

@@ -6,11 +6,19 @@
       <div class="infoBanner">
         <!-- 左侧导航栏 -->
         <nav>
-          <div class="navItem" v-for="(item, index) in navList" :key="index">{{ item.title }}</div>
+          <div class="navItem" v-for="(item, index) in navList" :key="index">
+            <a
+              :href="'#' + item.id"
+              :class="{ active: activeSection === item.id }"
+              @click.prevent="scrollTo(item.id)"
+              >{{ item.title }}</a
+            >
+          </div>
         </nav>
         <!-- 右侧内容信息 -->
-        <div class="info">
+        <div class="info" ref="scrollContainer">
           <div
+            :id="item.id"
             v-for="(item, index) in navList"
             :key="index"
             style="height: 200px; marginbottom: 10px"
@@ -64,7 +72,7 @@
 
     .infoBanner {
       display: flex;
-      height: 160px;
+      height: 300px;
 
       nav {
         display: flex;
@@ -93,23 +101,85 @@
         padding: 0 30px;
         overflow-y: auto;
       }
+
+      .active {
+        font-weight: bold;
+        color: #007bff;
+      }
     }
   }
 }
 </style>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 
 const navList = ref([
   {
+    id: 'wjk-info',
     title: '基本信息'
   },
   {
-    title: '项目简历'
+    id: 'wjk-skills',
+    title: '专业技能'
   },
   {
+    id: 'wjk-internship',
     title: '实习经历'
+  },
+  {
+    id: 'wjk-projects',
+    title: '项目经历'
+  },
+  {
+    id: 'wjk-activities',
+    title: '活动经历'
+  },
+  {
+    id: 'wjk-prizes',
+    title: '荣誉奖项'
   }
 ])
+
+const activeSection = ref('') //当前选中的navItem的id
+const scrollContainer = ref(null) //滚动的容器
+
+// 平滑滚动到指定锚点
+const scrollTo = (id: string) => {
+  const element = document.getElementById(id)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+// 监听滚动事件并更新当前视口中的锚点
+const handleScroll = () => {
+  const container = scrollContainer.value //获取滚动容器
+  const scrollPosition = container.scrollTop
+  navList.value.forEach((item) => {
+    const element = document.getElementById(item.id)
+    if (element) {
+      const rect = element.getBoundingClientRect()
+      console.log(rect.top, rect.bottom, item.title)
+      if (rect.top <= container.clientHeight / 2 && rect.bottom >= container.clientHeight / 2) {
+        activeSection.value = item.id
+      }
+    }
+  })
+}
+
+// 添加和移除滚动事件监听
+onMounted(() => {
+  nextTick(() => {
+    const container = scrollContainer.value
+    container.addEventListener('scroll', handleScroll)
+  })
+})
+
+onUnmounted(() => {
+  const container = scrollContainer.value
+  if (container) {
+    container.removeEventListener('scroll', handleScroll)
+  }
+})
 </script>
