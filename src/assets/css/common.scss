@@ -1,5 +1,6 @@
 /* 全局通用css样式 */
 @import './base.css';
+@import url('./scrollBar.css');
 
 //夜间模式主题
 :root.dark {
@@ -20,6 +21,8 @@
   --darkTxtColor: #cfd3dc;
   --darkInputBgc: #2c2c2c;
   --inputBgc: #f2f2f2;
+  --listItem-hover: #f9f9f9;
+  --borderColor: #eee;
 }
 
 :root {
