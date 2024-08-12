@@ -21,7 +21,7 @@
             :id="item.id"
             v-for="(item, index) in navList"
             :key="index"
-            style="height: 200px; marginbottom: 10px"
+            style="height: 250px; marginbottom: 10px"
           >
             {{ item.title }}
             {{ item.title }}
@@ -155,15 +155,12 @@ const scrollTo = (id: string) => {
 // 监听滚动事件并更新当前视口中的锚点
 const handleScroll = () => {
   const container = scrollContainer.value //获取滚动容器
-  const scrollPosition = container.scrollTop
+  const containerRect = container.getBoundingClientRect()
   navList.value.forEach((item) => {
     const element = document.getElementById(item.id)
     if (element) {
       const rect = element.getBoundingClientRect()
-      console.log(rect.top, rect.bottom, item.title)
-      if (rect.top <= container.clientHeight / 2 && rect.bottom >= container.clientHeight / 2) {
-        activeSection.value = item.id
-      }
+      if (rect.top <= containerRect.top + 60) activeSection.value = item.id
     }
   })
 }
@@ -171,11 +168,9 @@ const handleScroll = () => {
 // 添加和移除滚动事件监听
 onMounted(() => {
   nextTick(() => {
-    const container = scrollContainer.value
-    container.addEventListener('scroll', handleScroll)
+    scrollContainer.value.addEventListener('scroll', handleScroll)
   })
 })
-
 onUnmounted(() => {
   const container = scrollContainer.value
   if (container) {
