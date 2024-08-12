@@ -6,13 +6,14 @@
       <div class="infoBanner">
         <!-- 左侧导航栏 -->
         <nav>
-          <div class="navItem" v-for="(item, index) in navList" :key="index">
-            <a
-              :href="'#' + item.id"
-              :class="{ active: activeSection === item.id }"
-              @click.prevent="scrollTo(item.id)"
-              >{{ item.title }}</a
-            >
+          <div
+            class="navItem"
+            v-for="(item, index) in navList"
+            :key="index"
+            :class="{ active: activeSection === item.id }"
+          >
+            <icon class="iconfont" :class="item.icon"></icon>
+            <a :href="'#' + item.id">{{ item.title }}</a>
           </div>
         </nav>
         <!-- 右侧内容信息 -->
@@ -81,17 +82,39 @@
         justify-content: center;
         padding: 20px 30px 20px 0;
         border-right: 1px solid var(--borderColor);
+        line-height: 20px;
 
         .navItem {
-          padding: 8px 14px;
           font-size: 14px;
           font-weight: 600;
           letter-spacing: 0.2em;
           border-radius: 6px;
           cursor: pointer;
+          border-left: 4px solid transparent;
 
           &:hover {
             background-color: var(--listItem-hover);
+          }
+
+          a {
+            display: inline-block;
+            padding: 8px 14px 8px 8px;
+          }
+
+          .iconfont {
+            margin-left: 8px;
+          }
+        }
+
+        .active {
+          font-weight: bold;
+          color: var(--themeColor);
+          background-color: var(--themeColor-lighter);
+          border-radius: 0px;
+          border-left: 4px solid var(--themeColor);
+
+          &:hover {
+            background-color: var(--themeColor-lighter); //防止选中状态悬停变色
           }
         }
       }
@@ -100,11 +123,6 @@
         flex: 1;
         padding: 0 30px;
         overflow-y: auto;
-      }
-
-      .active {
-        font-weight: bold;
-        color: #007bff;
       }
     }
   }
@@ -117,34 +135,40 @@ import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 const navList = ref([
   {
     id: 'wjk-info',
-    title: '基本信息'
+    title: '个人简介',
+    icon: 'icon-gerenjianjie'
   },
   {
     id: 'wjk-skills',
-    title: '专业技能'
+    title: '专业技能',
+    icon: 'icon-zhuanyejineng'
   },
   {
     id: 'wjk-internship',
-    title: '实习经历'
+    title: '实习经历',
+    icon: 'icon-shixi'
   },
   {
     id: 'wjk-projects',
-    title: '项目经历'
+    title: '项目经历',
+    icon: 'icon-project'
   },
   {
     id: 'wjk-activities',
-    title: '活动经历'
+    title: '活动经历',
+    icon: 'icon-kejiluntan'
   },
   {
     id: 'wjk-prizes',
-    title: '荣誉奖项'
+    title: '荣誉奖项',
+    icon: 'icon-rongyu'
   }
 ])
 
 const activeSection = ref('') //当前选中的navItem的id
 const scrollContainer = ref(null) //滚动的容器
 
-// 平滑滚动到指定锚点
+// 平滑滚动到指定锚点(暂不使用)
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
   if (element) {
