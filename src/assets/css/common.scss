@@ -5,17 +5,17 @@
 //夜间模式主题
 :root.dark {
   background-color: var(--darkBgc);
-  color: var(--darkTxtColor);
+  color: var(--darkTxtColor) !important;
 }
 
 //白天模式主题
 :root {
-  background-color: rgb(243 244 246);
+  background-color: var(--bgc);
 }
 
 //全局css变量
 :root {
-  --bgc: #fff;
+  --bgc: rgb(243 244 246);
   --darkBgc: #141414;
   --txtColor: #000;
   --darkTxtColor: #cfd3dc;

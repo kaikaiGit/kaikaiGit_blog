@@ -33,7 +33,7 @@ const toggleDark = useToggle(isDark)
 const isdark = ref(isDark)
 </script>
 
-<style>
+<style lang="scss" scoped>
 .env-box {
   display: flex;
   align-items: center;

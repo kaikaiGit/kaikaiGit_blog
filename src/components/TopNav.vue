@@ -24,7 +24,7 @@
       推荐
     </el-menu-item>
 
-    <ThemeSwitch style="margin: 0 10px" @click="handleToggle" />
+    <ThemeSwitch style="margin: 0 10px" />
 
     <a
       v-if="!viewportStore.isMobile"
@@ -48,15 +48,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useViewportStore } from '../stores/viewPort'
+import { useDark } from '@vueuse/core' //主题切换相关
 
 /* 主题切换相关 */
-const isDark = ref(false)
-const handleToggle = (): void => {
-  isDark.value = !isDark.value
-}
+const isDark = useDark()
 
 /* 路由跳转相关 */
 const router = useRouter()

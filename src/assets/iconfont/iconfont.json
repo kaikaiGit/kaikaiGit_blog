@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1345821",
+      "name": "基本信息",
+      "font_class": "jibenxinxi",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
       "icon_id": "217416",
       "name": "project",
       "font_class": "project",
@@ -18,13 +25,6 @@
       "font_class": "zhuanyejineng",
       "unicode": "e617",
       "unicode_decimal": 58903
-    },
-    {
-      "icon_id": "6682542",
-      "name": "个人简介",
-      "font_class": "gerenjianjie",
-      "unicode": "e606",
-      "unicode_decimal": 58886
     },
     {
       "icon_id": "6682545",
