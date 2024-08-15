@@ -67,7 +67,7 @@
 
     .infoBanner {
       display: flex;
-      height: 300px;
+      height: 400px;
 
       nav {
         display: flex;
