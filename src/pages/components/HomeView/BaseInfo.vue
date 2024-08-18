@@ -27,21 +27,41 @@
           <li>
             <div class="flex-vertical">
               <el-icon class="infoIcon">
-                <Iphone />
+                <Calendar />
               </el-icon>
-              电话：
+              生日：
             </div>
-            <div>17825698559</div>
+            <div>2003-03-14</div>
           </li>
 
           <li>
             <div class="flex-vertical">
               <el-icon class="infoIcon">
-                <Calendar />
+                <School />
               </el-icon>
-              生日：
+              学校：
             </div>
-            <div>{{ dayjs('2003-03-14').format('YYYY-MM-DD') }}</div>
+            <div>深圳大学</div>
+          </li>
+
+          <li>
+            <div class="flex-vertical">
+              <el-icon class="infoIcon">
+                <Key />
+              </el-icon>
+              专业：
+            </div>
+            <div>计算机科学与技术</div>
+          </li>
+
+          <li>
+            <div class="flex-vertical">
+              <el-icon class="infoIcon">
+                <Iphone />
+              </el-icon>
+              电话：
+            </div>
+            <div>17825698559</div>
           </li>
 
           <li>
@@ -76,7 +96,7 @@
         </ul>
       </div>
 
-      <div class="flex-horizontal" style="height: 280px; flex-grow: 1">
+      <div class="flex-horizontal" style="height: 350px; flex-grow: 1">
         <div class="picBox">
           <img
             src="@/assets/images/myPic.jpg"
@@ -85,7 +105,7 @@
           />
           <div class="cover">
             <div style="margin-top: 10px">JK Wu</div>
-            <div class="desc">一位热爱探索的开发者</div>
+            <div class="desc">一位酷爱探索的开发者</div>
           </div>
         </div>
       </div>
@@ -93,14 +113,12 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import dayjs from 'dayjs'
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 h1 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 800;
   margin: 20px 0;
 }
 
@@ -114,7 +132,7 @@ h1 {
     font-size: 18px;
 
     li {
-      width: calc(100px + 30vw);
+      width: calc(300px);
       display: flex;
       justify-content: space-between;
       padding: 10px 10px;
@@ -154,13 +172,13 @@ h1 {
       background-color: rgba(0, 0, 0, 0.5);
       text-align: center;
       color: white;
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 700;
       line-height: 1.7;
       transition: 0.3s all;
 
       .desc {
-        font-size: 14px;
+        font-size: 18px;
         font-weight: 400;
         color: transparent;
         background: -webkit-linear-gradient(left, #ff5500, #ffff00) 0 0 no-repeat;

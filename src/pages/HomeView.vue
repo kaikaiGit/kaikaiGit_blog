@@ -1,29 +1,31 @@
 <template>
   <div class="body">
     <div class="top"></div>
-    <div
-      class="content"
-      :style="
-        isDark && { backgroundColor: '#000', boxShadow: '0 2px 12px 0 rgba(255, 255, 255, 0.1)' }
-      "
-    >
-      <h1 class="title">About me</h1>
-      <div class="infoBanner">
-        <!-- 左侧导航栏 -->
-        <nav>
-          <div
-            class="navItem"
-            v-for="(item, index) in navList"
-            :key="index"
-            :class="{ active: activeSection === item.id }"
-          >
-            <i class="iconfont" :class="item.icon"></i>
-            <a :href="'#' + item.id">{{ item.title }}</a>
+    <div class="bottom">
+      <div
+        class="content"
+        :style="
+          isDark && { backgroundColor: '#000', boxShadow: '0 2px 12px 0 rgba(255, 255, 255, 0.1)' }
+        "
+      >
+        <h1 class="title">About me</h1>
+        <div class="infoBanner">
+          <!-- 左侧导航栏 -->
+          <nav>
+            <div
+              class="navItem"
+              v-for="(item, index) in navList"
+              :key="index"
+              :class="{ active: activeSection === item.id }"
+            >
+              <i class="iconfont" :class="item.icon"></i>
+              <a :href="'#' + item.id">{{ item.title }}</a>
+            </div>
+          </nav>
+          <!-- 右侧内容信息 -->
+          <div class="info" ref="scrollContainer">
+            <component v-for="item in navList" :key="item.id" :is="item.component" :id="item.id" />
           </div>
-        </nav>
-        <!-- 右侧内容信息 -->
-        <div class="info" ref="scrollContainer">
-          <component v-for="item in navList" :key="item.id" :is="item.component" />
         </div>
       </div>
     </div>
@@ -46,11 +48,16 @@
     background-color: var(--themeColor);
   }
 
+  .bottom {
+    padding-inline: 30px;
+  }
+
   .content {
     position: relative;
     background-color: #fff;
     border-radius: 10px;
-    margin: -66px 32px;
+    max-width: 1000px;
+    margin: -66px auto;
     padding: 30px 6px 30px 30px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 
@@ -62,17 +69,20 @@
       font-weight: 700;
       font-family: 'dd Regular';
       letter-spacing: 0.05em;
-      color: white;
+      color: transparent;
+      background-image: url('@/assets/images/bg1.webp');
+      background-position: 50% 60%;
+      background-clip: text;
     }
 
     .infoBanner {
       display: flex;
-      height: 400px;
+      height: 500px;
 
       nav {
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 10px;
         justify-content: center;
         padding: 20px 30px 20px 0;
         border-right: 1px solid var(--borderColor);
