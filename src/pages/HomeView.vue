@@ -24,7 +24,13 @@
           </nav>
           <!-- 右侧内容信息 -->
           <div class="info" ref="scrollContainer">
-            <component v-for="item in navList" :key="item.id" :is="item.component" :id="item.id" />
+            <component
+              v-for="item in navList"
+              :key="item.id"
+              :is="item.component"
+              :id="item.id"
+              style="margin-bottom: 40px"
+            />
           </div>
         </div>
       </div>
@@ -161,6 +167,12 @@ const navList = [
     component: MySkills
   },
   {
+    id: 'wjk-activities',
+    title: '校园经历',
+    icon: 'icon-kejiluntan',
+    component: MyActivities
+  },
+  {
     id: 'wjk-internship',
     title: '实习经历',
     icon: 'icon-shixi',
@@ -171,12 +183,6 @@ const navList = [
     title: '项目经历',
     icon: 'icon-project',
     component: MyProjects
-  },
-  {
-    id: 'wjk-activities',
-    title: '活动经历',
-    icon: 'icon-kejiluntan',
-    component: MyActivities
   },
   {
     id: 'wjk-prizes',

@@ -1,0 +1,17 @@
+//通用css类
+.flex-grow {
+  flex: 1;
+}
+.flex-vertical {
+  display: flex;
+  align-items: center;
+}
+.flex-horizontal {
+  display: flex;
+  justify-content: center;
+}
+.myInfo h1 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 20px 0;
+}

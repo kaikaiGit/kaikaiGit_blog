@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="myInfo">
     <h1>个人简介</h1>
     <div class="container">
       <div class="infos">
@@ -37,6 +37,16 @@
           <li>
             <div class="flex-vertical">
               <el-icon class="infoIcon">
+                <Place />
+              </el-icon>
+              籍贯：
+            </div>
+            <div>广东汕头</div>
+          </li>
+
+          <li>
+            <div class="flex-vertical">
+              <el-icon class="infoIcon">
                 <School />
               </el-icon>
               学校：
@@ -62,16 +72,6 @@
               电话：
             </div>
             <div>17825698559</div>
-          </li>
-
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <Place />
-              </el-icon>
-              籍贯：
-            </div>
-            <div>广东汕头</div>
           </li>
 
           <li>
@@ -116,12 +116,6 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-h1 {
-  font-size: 24px;
-  font-weight: 800;
-  margin: 20px 0;
-}
-
 .container {
   display: flex;
   flex-wrap: wrap;

@@ -1,6 +1,7 @@
 /* 全局通用css样式 */
 @import './base.css';
 @import url('./scrollBar.css');
+@import url('./globalClass.scss');
 
 //夜间模式主题
 :root.dark {
@@ -35,17 +36,4 @@
 :root {
   --el-menu-hover-bg-color: transparent;
   --el-menu-hover-text-color: #b7d9b1;
-}
-
-//通用css类
-.flex-grow {
-  flex: 1;
-}
-.flex-vertical {
-  display: flex;
-  align-items: center;
-}
-.flex-horizontal {
-  display: flex;
-  justify-content: center;
 }
