@@ -191,7 +191,7 @@ const scrollTo = (id: string) => {
 const handleScroll = () => {
   const container = scrollContainer.value //获取滚动容器
   const containerRect = container.getBoundingClientRect()
-  navList.value.forEach((item) => {
+  navList.forEach((item) => {
     const element = document.getElementById(item.id)
     if (element) {
       const rect = element.getBoundingClientRect()
