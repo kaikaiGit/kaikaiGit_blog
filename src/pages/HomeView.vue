@@ -190,6 +190,7 @@ const scrollTo = (id: string) => {
 // 监听滚动事件并更新当前视口中的锚点
 const handleScroll = () => {
   const container = scrollContainer.value //获取滚动容器
+  if (!container) return //如果没有滚动容器则返回
   const containerRect = container.getBoundingClientRect()
   navList.forEach((item) => {
     const element = document.getElementById(item.id)

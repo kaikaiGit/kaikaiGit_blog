@@ -77,7 +77,17 @@
       </div>
 
       <div class="flex-horizontal" style="height: 280px; flex-grow: 1">
-        <div><img src="@/assets/images/myPic.jpg" alt="JK Wu" style="height: 100%" /></div>
+        <div class="picBox">
+          <img
+            src="@/assets/images/myPic.jpg"
+            alt="JK Wu"
+            style="height: 100%; transition: 0.3s all"
+          />
+          <div class="cover">
+            <div style="margin-top: 10px">JK Wu</div>
+            <div class="desc">一位热爱探索的开发者</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -102,7 +112,6 @@ h1 {
 
   .infos {
     font-size: 18px;
-    // flex-grow: 1;
 
     li {
       width: calc(100px + 30vw);
@@ -119,6 +128,60 @@ h1 {
     .infoIcon {
       margin-right: 6px;
     }
+  }
+
+  .picBox {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      .cover {
+        bottom: 0;
+        .desc {
+          animation: moveBgc 3s 1 forwards;
+        }
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    .cover {
+      position: absolute;
+      bottom: -30%;
+      width: 100%;
+      height: 30%;
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.7;
+      transition: 0.3s all;
+
+      .desc {
+        font-size: 14px;
+        font-weight: 400;
+        color: transparent;
+        background: -webkit-linear-gradient(left, #ff5500, #ffff00) 0 0 no-repeat;
+        background-size: 28px;
+        background-clip: text;
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+}
+
+@keyframes moveBgc {
+  0% {
+    background-position: 0 0;
+  }
+  95% {
+    background-position: 100% 100%;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    color: #fff;
   }
 }
 </style>
