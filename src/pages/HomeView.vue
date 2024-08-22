@@ -62,7 +62,7 @@
     position: relative;
     background-color: #fff;
     border-radius: 10px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: -66px auto;
     padding: 30px 6px 30px 30px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);

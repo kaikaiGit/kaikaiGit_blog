@@ -1,7 +1,7 @@
 <template>
   <div class="myInfo">
     <el-tooltip class="box-item" effect="dark" content="前端相关技术栈" placement="right">
-      <h1 style="display: inline-block">专业技能</h1>
+      <h1>专业技能</h1>
     </el-tooltip>
     <div class="container">
       <el-table :data="tableData" stripe style="width: 100%" @row-click="handleClick">
