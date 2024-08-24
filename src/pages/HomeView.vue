@@ -50,7 +50,7 @@
 
 .body {
   .top {
-    height: 160px;
+    height: 120px;
     background-color: var(--themeColor);
   }
 
@@ -63,7 +63,7 @@
     background-color: #fff;
     border-radius: 10px;
     max-width: 1100px;
-    margin: -66px auto;
+    margin: -50px auto;
     padding: 30px 6px 30px 30px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 
@@ -83,7 +83,7 @@
 
     .infoBanner {
       display: flex;
-      height: 500px;
+      height: calc(100vh - 220px);
 
       nav {
         display: flex;

@@ -2,6 +2,11 @@
 .flex-grow {
   flex: 1;
 }
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .flex-vertical {
   display: flex;
   align-items: center;
@@ -9,6 +14,10 @@
 .flex-horizontal {
   display: flex;
   justify-content: center;
+}
+.flex-horizontal-between {
+  display: flex;
+  justify-content: space-between;
 }
 .myInfo h1 {
   display: inline-block;
