@@ -31,7 +31,7 @@
     </ul>
 
     <h2>活动碎片</h2>
-    <el-carousel motion-blur :height="picHeight" id="picCarousel" type="card">
+    <el-carousel :height="picHeight" id="picCarousel" type="card">
       <el-carousel-item v-for="(item, index) in 4" :key="item">
         <img
           :src="`src/assets/images/activity${index + 1}.jpg`"
