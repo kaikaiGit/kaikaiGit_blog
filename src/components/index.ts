@@ -1,5 +1,5 @@
 //引入svg组件
-import SvgIcon from './svg-icon/index'
+import SvgIcon from '@/components/svg-icon/SvgIcon.vue'
 
 //配置多个全局组件
 const componentsConfig = [
@@ -11,7 +11,7 @@ const componentsConfig = [
 
 function addGlobal() {
   return {
-    install: function (Vue) {
+    install: function (Vue: any) {
       componentsConfig.forEach((config) => {
         Vue.component(config.name, config.component)
       })

@@ -51,6 +51,7 @@ const picHeight = ref('400px')
 
 const calPicHeight = () => {
   const picBox = document.querySelector('#picCarousel')
+  if (!picBox) return
   picHeight.value = `${picBox.clientWidth * 0.32}px`
 }
 onMounted(() => {

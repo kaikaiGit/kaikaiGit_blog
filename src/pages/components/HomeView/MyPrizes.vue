@@ -1,5 +1,7 @@
 <template>
-  <div>6</div>
+  <div class="myInfo">
+    <h1>荣誉奖项</h1>
+  </div>
 </template>
 
 <script setup lang="ts"></script>

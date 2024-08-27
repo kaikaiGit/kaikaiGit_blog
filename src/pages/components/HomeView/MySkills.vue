@@ -158,7 +158,7 @@ const tableData: TableItem[] = [
   }
 ]
 //标签type映射表
-const typeMap = {
+const typeMap: { [key: string]: 'primary' | 'warning' | 'success' | 'info' } = {
   语言: 'primary',
   预处理语言: 'primary',
   工具类库: 'warning',

@@ -8,7 +8,7 @@
         <span class="flex-vertical">2024.07 - 至今</span>
       </div>
       <!-- 实习项目内容 -->
-      <el-collapse v-model="activeName" class="company-projects">
+      <el-collapse class="company-projects">
         <el-collapse-item name="1">
           <template #title>
             <img src="@/assets/images/airform-logo.webp" alt="stickerHub-logo" />

@@ -207,7 +207,7 @@ const scrollTo = (id: string) => {
 const handleScroll = () => {
   const container = scrollContainer.value //获取滚动容器
   if (!container) return //如果没有滚动容器则返回
-  const containerRect = container.getBoundingClientRect()
+  const containerRect = (container as HTMLElement).getBoundingClientRect()
   navList.forEach((item) => {
     const element = document.getElementById(item.id)
     if (element) {
@@ -220,13 +220,14 @@ const handleScroll = () => {
 // 添加和移除滚动事件监听
 onMounted(() => {
   nextTick(() => {
-    scrollContainer.value.addEventListener('scroll', handleScroll)
+    if (scrollContainer.value)
+      (scrollContainer.value as HTMLElement).addEventListener('scroll', handleScroll)
   })
 })
 onUnmounted(() => {
   const container = scrollContainer.value
   if (container) {
-    container.removeEventListener('scroll', handleScroll)
+    ;(container as HTMLElement).removeEventListener('scroll', handleScroll)
   }
 })
 </script>
