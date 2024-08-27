@@ -32,9 +32,39 @@
 
     <h2>活动碎片</h2>
     <el-carousel :height="picHeight" id="picCarousel" type="card">
-      <el-carousel-item v-for="(item, index) in 4" :key="item">
+      <el-carousel-item>
         <img
-          :src="`src/assets/images/activity${index + 1}.jpg`"
+          src="@/assets/images/activity1.jpg"
+          alt=""
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/activity2.jpg"
+          alt=""
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/activity3.jpg"
+          alt=""
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/activity4.jpg"
           alt=""
           height="100%"
           width="100%"
