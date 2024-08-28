@@ -19,7 +19,7 @@
               :class="{ active: activeSection === item.id }"
             >
               <i class="iconfont" :class="item.icon"></i>
-              <a :href="'#' + item.id">{{ item.title }}</a>
+              <a :href="'#' + item.id" @click.prevent="scrollTo(item.id)">{{ item.title }}</a>
             </div>
           </nav>
           <!-- 右侧内容信息 -->
@@ -195,7 +195,7 @@ const navList = [
 const activeSection = ref('wjk-info') //当前选中的navItem的id
 const scrollContainer = ref(null) //滚动的容器
 
-// 平滑滚动到指定锚点(暂不使用)
+// 平滑滚动到指定锚点
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
   if (element) {
