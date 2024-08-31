@@ -1,6 +1,6 @@
 # personal_blog
 
-JK Wu's personal blog based on Vue3 + TS + element-plus + Pinia ...
+JK Wu's personal blog based on Vue3 + TS + element-plus + Pinia + Sass + iconfont + github Page...
 
 ## Type Support for `.vue` Imports in TS
 
@@ -28,4 +28,10 @@ npm run build
 
 ```sh
 npm run lint
+```
+
+### [github Page](https://kaikaigit.github.io/kaikaiGit_blog/)
+
+```sh
+git subtree push --prefix dist origin gh-pages
 ```

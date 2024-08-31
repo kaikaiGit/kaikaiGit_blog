@@ -21,6 +21,8 @@
               <i class="iconfont" :class="item.icon"></i>
               <a :href="'#' + item.id" @click.prevent="scrollTo(item.id)">{{ item.title }}</a>
             </div>
+
+            <img src="@/assets/images/dogIcon.svg" class="dogPic"/>
           </nav>
           <!-- 右侧内容信息 -->
           <div class="info" ref="scrollContainer">
@@ -93,6 +95,14 @@
         padding: 20px 30px 20px 0;
         border-right: 1px solid var(--borderColor);
         line-height: 20px;
+
+        .dogPic {
+          position: absolute;
+          bottom: 10px;
+          left: 30px;
+          width: 100px;
+          // transform: rotate(10deg);
+        }
 
         .navItem {
           font-size: 14px;
