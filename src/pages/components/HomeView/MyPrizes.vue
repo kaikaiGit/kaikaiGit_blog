@@ -38,8 +38,40 @@
     </div>
 
     <el-carousel :height="picHeight" id="picCarousel" type="card">
-      <el-carousel-item v-for="(pic, index) in picList" :key="index">
-        <img :src="pic" height="100%" width="100%" style="object-fit: cover" />
+      <el-carousel-item>
+        <img
+          src="@/assets/images/prize1.jpg"
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/prize2.jpg"
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/prize3.jpg"
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/prize4.jpg"
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -47,13 +79,6 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-
-const picList = [
-  '/src/assets/images/prize1.jpg',
-  '/src/assets/images/prize2.jpg',
-  '/src/assets/images/prize3.jpg',
-  '/src/assets/images/prize4.jpg'
-]
 
 const picHeight = ref('400px')
 
