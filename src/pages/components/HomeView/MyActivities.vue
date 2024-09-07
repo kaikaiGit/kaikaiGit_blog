@@ -71,6 +71,16 @@
           style="object-fit: cover"
         />
       </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/activity5.jpg"
+          alt=""
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
     </el-carousel>
   </div>
 </template>
