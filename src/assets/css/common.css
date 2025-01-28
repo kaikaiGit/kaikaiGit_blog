@@ -1,27 +1,22 @@
+@charset "UTF-8";
 /* 全局通用css样式 */
-@import './base.css';
-@import url('./scrollBar.css');
-@import url('./globalClass.scss');
-@import url('./overwrite.css');   
-
-//夜间模式主题
+@import url(c:\Users\86178\Desktop\个人博客\kaikaiGit_blog\src\assets\css\base.css);
+@import url("./scrollBar.css");
+@import url("./globalClass.scss");
+@import url("./overwrite.css");
 :root.dark {
   background-color: var(--darkBgc);
   color: var(--darkTxtColor) !important;
 }
 
-//白天模式主题
 :root {
   height: 100%;
   background-color: var(--bgc);
-  background:no-repeat top center url('@/assets/images/bg-top.webp'), 
-            no-repeat bottom center url('@/assets/images/bg-bottom.webp');
-  
+  background: no-repeat top center url("@/assets/images/bg-top.webp"), no-repeat bottom center url("@/assets/images/bg-bottom.webp");
 }
 
-//全局css变量
 :root {
-  --bgc: rgb(243,244,246);
+  --bgc: #f3f4f6;
   --darkBgc: #141414;
   --txtColor: #000;
   --darkTxtColor: #cfd3dc;

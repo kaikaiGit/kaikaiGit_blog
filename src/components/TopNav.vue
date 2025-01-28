@@ -6,6 +6,7 @@
     active-text-color="var(--themeColor)"
     menu-trigger="click"
     close-on-click-outside
+    background-color="transparent"
   >
     <router-link to="/">
       <el-menu-item index="0" class="flex-vertical" style="height: 100%; padding: 0">

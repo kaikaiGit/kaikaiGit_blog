@@ -53,7 +53,6 @@
 .body {
   .top {
     height: 120px;
-    background-color: var(--themeColor);
   }
 
   .bottom {
