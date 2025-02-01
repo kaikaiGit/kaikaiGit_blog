@@ -1,102 +1,26 @@
 <template>
   <div class="myInfo">
-    <h1>个人简介</h1>
-    <div class="container">
-      <div class="infos">
-        <ul>
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <User />
-              </el-icon>
-              姓名：
-            </div>
-            <div>吴嘉楷</div>
-          </li>
+    <div class="container">   
+      <h2 class="mainInfo">
+        <div>
+          我是JK Wu，
+        </div>
+        <div>
+          一位前端工程师
+        </div>
+        <div class="box">
+          <div>
+            <span>酷爱探索</span>
+            <br>
+            <span>追求卓越</span>
+            <br>
+            <span>酷爱探索</span>
+          </div>
+        </div>
+        <span>中国·深圳</span>
+      </h2>
 
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <Male />
-              </el-icon>
-              性别：
-            </div>
-            <div>男</div>
-          </li>
-
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <Calendar />
-              </el-icon>
-              生日：
-            </div>
-            <div>2003-03-14</div>
-          </li>
-
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <Place />
-              </el-icon>
-              籍贯：
-            </div>
-            <div>广东汕头</div>
-          </li>
-
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <School />
-              </el-icon>
-              学校：
-            </div>
-            <div>深圳大学</div>
-          </li>
-
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <Key />
-              </el-icon>
-              专业：
-            </div>
-            <div>计算机科学与技术</div>
-          </li>
-
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <Iphone />
-              </el-icon>
-              电话：
-            </div>
-            <div>17825698559</div>
-          </li>
-
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <Message />
-              </el-icon>
-              邮箱：
-            </div>
-            <div>2431208434@qq.com</div>
-          </li>
-
-          <li>
-            <div class="flex-vertical">
-              <el-icon class="infoIcon">
-                <Postcard />
-              </el-icon>
-              职位：
-            </div>
-            <div>前端开发工程师</div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="flex-horizontal" style="height: 350px; flex-grow: 1">
+      <div class="flex-horizontal" style="height: 350px;">
         <div class="picBox">
           <img
             src="@/assets/images/myPic.jpg"
@@ -116,11 +40,72 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
+
 .container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+
+  .mainInfo{
+    flex: 1;
+    div {
+      font-size: 32px;
+      font-weight: 600;
+      font-family: 'dd Regular';
+      line-height: 1.5em;
+    }
+
+    .box {
+      overflow: hidden;
+      height: 50px;
+    }
+
+    div span:first-of-type{
+      color: transparent;
+      background: -webkit-linear-gradient(left, #1b3eed, #13dfb6) 0 0 no-repeat;
+      background-clip: text;
+    }
+
+    div span:nth-of-type(2n){
+      color: transparent;
+      background: -webkit-linear-gradient(left, #ff5500, #ffff00) 0 0 no-repeat;
+      background-clip: text;
+    }
+
+    div span:last-of-type{
+      color: transparent;
+      background: -webkit-linear-gradient(left, #1b3eed, #13dfb6) 0 0 no-repeat;
+      background-clip: text;
+    }
+
+    @keyframes moveToTop {
+      0% {
+        transform: translateY(0);
+      }
+      7% {
+        transform: translateY(-63px);
+      }
+      50% {
+        transform: translateY(-63px);
+      }
+      57% {
+        transform: translateY(-116px);
+      }
+      100% {
+        transform: translateY(-116px);
+      }
+    }
+
+    div > div {
+      animation: moveToTop 4s ease-in-out infinite;
+    }
+
+    span {
+      line-height: 1.8em;
+      color: #888;
+    }
+  }
 
   .infos {
     font-size: 18px;

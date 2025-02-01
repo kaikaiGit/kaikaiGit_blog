@@ -1,42 +1,28 @@
 <template>
   <div class="body">
-    <div class="top"></div>
-    <div class="bottom">
+    <img src="@/assets/images/dogIcon.svg" class="dogPic"/>
+    <nav>
       <div
-        class="content"
-        :style="
-          isDark && { backgroundColor: '#000', boxShadow: '0 2px 12px 0 rgba(255, 255, 255, 0.1)' }
-        "
+        class="navItem"
+        v-for="(item, index) in navList"
+        :key="index"
+        :class="{ active: activeSection === item.id }"
       >
-        <h1 class="title">About me</h1>
-        <div class="infoBanner">
-          <!-- 左侧导航栏 -->
-          <nav>
-            <div
-              class="navItem"
-              v-for="(item, index) in navList"
-              :key="index"
-              :class="{ active: activeSection === item.id }"
-            >
-              <i class="iconfont" :class="item.icon"></i>
-              <a :href="'#' + item.id" @click.prevent="scrollTo(item.id)">{{ item.title }}</a>
-            </div>
-
-            <img src="@/assets/images/dogIcon.svg" class="dogPic"/>
-          </nav>
-          <!-- 右侧内容信息 -->
-          <div class="info" ref="scrollContainer">
-            <component
-              v-for="item in navList"
-              :key="item.id"
-              :is="item.component"
-              :id="item.id"
-              style="margin-bottom: 40px"
-            />
-          </div>
-        </div>
+        <i class="iconfont" :class="item.icon"></i>
+        <a :href="'#' + item.id" @click.prevent="scrollTo(item.id)">{{ item.title }}</a>
       </div>
+    </nav>
+    <div class="banner">
+      
+      <component
+        v-for="item in navList"
+        :key="item.id"
+        :is="item.component"
+        :id="item.id"
+        style="margin-bottom: 40px"
+      />
     </div>
+   
   </div>
 </template>
 
@@ -49,16 +35,20 @@
     url('@/assets/fonts/dd_Regular/bjJcJl24BO6h.woff') format('woff');
   font-display: swap;
 }
+.dogPic {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 150px;
+}
 
 .body {
-  .top {
-    height: 120px;
+  .banner {
+    margin: 0 auto;
+    padding: 30px;
+    width: 1000px;
+    // background-color: grey;
   }
-
-  .bottom {
-    padding-inline: 30px;
-  }
-
   .content {
     position: relative;
     background-color: #fff;
@@ -68,19 +58,7 @@
     padding: 30px 6px 30px 30px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 
-    .title {
-      position: absolute;
-      left: 0;
-      top: -55px;
-      font-size: 34px;
-      font-weight: 700;
-      font-family: 'dd Regular';
-      letter-spacing: 0.05em;
-      color: transparent;
-      background-image: url('@/assets/images/bg1.webp');
-      background-position: 50% 60%;
-      background-clip: text;
-    }
+    
 
     .infoBanner {
       display: flex;
@@ -94,14 +72,6 @@
         padding: 20px 30px 20px 0;
         border-right: 1px solid var(--borderColor);
         line-height: 20px;
-
-        .dogPic {
-          position: absolute;
-          bottom: 10px;
-          left: 30px;
-          width: 100px;
-          // transform: rotate(10deg);
-        }
 
         .navItem {
           font-size: 14px;
