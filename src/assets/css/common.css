@@ -4,6 +4,7 @@
 @import url("./scrollBar.css");
 @import url("./globalClass.scss");
 @import url("./overwrite.css");
+@import url("./mobile.scss");
 :root.dark {
   background-color: var(--darkBgc);
   color: var(--darkTxtColor) !important;

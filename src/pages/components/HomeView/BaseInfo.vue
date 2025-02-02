@@ -46,11 +46,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap:20px;
 
   .mainInfo{
     flex: 1;
+    min-width: 170px;
     div {
-      font-size: 32px;
+      font-size: 2rem;
       font-weight: 600;
       font-family: 'dd Regular';
       line-height: 1.5em;
@@ -84,16 +86,16 @@
         transform: translateY(0);
       }
       7% {
-        transform: translateY(-63px);
+        transform: translateY(-3.625rem);
       }
       50% {
-        transform: translateY(-63px);
+        transform: translateY(-3.625rem);
       }
       57% {
-        transform: translateY(-116px);
+        transform: translateY(-7.25rem);
       }
       100% {
-        transform: translateY(-116px);
+        transform: translateY(-7.25rem);
       }
     }
 
@@ -104,26 +106,6 @@
     span {
       line-height: 1.8em;
       color: #888;
-    }
-  }
-
-  .infos {
-    font-size: 18px;
-
-    li {
-      width: calc(300px);
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 10px;
-      border-bottom: 1px dashed #aaa;
-    }
-
-    li:last-of-type {
-      border-bottom: none;
-    }
-
-    .infoIcon {
-      margin-right: 6px;
     }
   }
 

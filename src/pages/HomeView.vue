@@ -43,7 +43,7 @@
   .banner {
     margin: 0 auto;
     padding: 30px;
-    width: 1000px;
+    max-width: 1000px;
     // background-color: grey;
   }
     
@@ -58,6 +58,7 @@
     justify-content: center;
     border-radius: 30px;
     padding-block: 20px;
+    z-index: 1000;
 
     a {
       display: inline-block;
