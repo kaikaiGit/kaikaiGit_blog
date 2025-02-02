@@ -1,19 +1,15 @@
 <template>
   <div class="body">
     <img src="@/assets/images/dogIcon.svg" class="dogPic"/>
-    <nav>
-      <div
-        class="navItem"
-        v-for="(item, index) in navList"
-        :key="index"
-        :class="{ active: activeSection === item.id }"
-      >
+    <nav class="homeNav">
+      <a :href="'#' + item.id" @click.prevent="scrollTo(item.id)" class="navItem"
+      v-for="(item, index) in navList"
+      :key="index"
+      :class="{ active: activeSection === item.id }">
         <i class="iconfont" :class="item.icon"></i>
-        <a :href="'#' + item.id" @click.prevent="scrollTo(item.id)">{{ item.title }}</a>
-      </div>
+      </a>
     </nav>
     <div class="banner">
-      
       <component
         v-for="item in navList"
         :key="item.id"
@@ -35,6 +31,7 @@
     url('@/assets/fonts/dd_Regular/bjJcJl24BO6h.woff') format('woff');
   font-display: swap;
 }
+
 .dogPic {
   position: fixed;
   bottom: 30px;
@@ -49,73 +46,66 @@
     width: 1000px;
     // background-color: grey;
   }
-  .content {
-    position: relative;
+    
+  nav {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--greyBgc);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 30px;
+    padding-block: 20px;
+
+    a {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      line-height: 44px;
+      margin: 8px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s all; 
+
+      .iconfont {
+        font-size: 32px;
+      }
+
+      &:hover {
+        background-color: #fff; //防止选中状态悬停变色
+      }
+    } 
+  }
+
+  .active {
+    font-weight: bold;
+    color: var(--themeColor);
     background-color: #fff;
     border-radius: 10px;
-    max-width: 1100px;
-    margin: -50px auto;
-    padding: 30px 6px 30px 30px;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-
-    
-
-    .infoBanner {
-      display: flex;
-      height: calc(100vh - 220px);
-
-      nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        justify-content: center;
-        padding: 20px 30px 20px 0;
-        border-right: 1px solid var(--borderColor);
-        line-height: 20px;
-
-        .navItem {
-          font-size: 14px;
-          font-weight: 600;
-          letter-spacing: 0.2em;
-          border-radius: 6px;
-          cursor: pointer;
-          border-left: 4px solid transparent;
-
-          &:hover {
-            background-color: var(--listItem-hover);
-          }
-
-          a {
-            display: inline-block;
-            padding: 8px 14px 8px 8px;
-          }
-
-          .iconfont {
-            margin-left: 8px;
-          }
-        }
-
-        .active {
-          font-weight: bold;
-          color: var(--themeColor);
-          background-color: var(--themeColor-lighter);
-          border-radius: 0px;
-          border-left: 4px solid var(--themeColor);
-          transition: 0.2s all;
-
-          &:hover {
-            background-color: var(--themeColor-lighter); //防止选中状态悬停变色
-          }
-        }
-      }
-
-      .info {
-        flex: 1;
-        padding: 0 30px;
-        overflow-y: auto;
-      }
-    }
+    position: relative;
   }
+
+  .active::before {
+      content: '';  /* 伪元素必须设置 content */
+      width: 6px;
+      height: 20px;
+      background-color: var(--greyBgc);
+      border-radius: 3px;  /* 圆形效果 */
+      position: absolute;  /* 绝对定位 */
+      left: -18px;  /* 定位在元素的最左边 */
+      top: 50%;  /* 垂直居中 */
+      transform: translateY(-50%);  /* 精确居中 */
+  }
+
+  .info {
+    flex: 1;
+    padding: 0 30px;
+    overflow-y: auto;
+  }
+  
 }
 </style>
 
@@ -172,7 +162,6 @@ const navList = [
 ]
 
 const activeSection = ref('wjk-info') //当前选中的navItem的id
-const scrollContainer = ref(null) //滚动的容器
 
 // 平滑滚动到指定锚点
 const scrollTo = (id: string) => {
@@ -184,14 +173,11 @@ const scrollTo = (id: string) => {
 
 // 监听滚动事件并更新当前视口中的锚点
 const handleScroll = () => {
-  const container = scrollContainer.value //获取滚动容器
-  if (!container) return //如果没有滚动容器则返回
-  const containerRect = (container as HTMLElement).getBoundingClientRect()
   navList.forEach((item) => {
     const element = document.getElementById(item.id)
     if (element) {
       const rect = element.getBoundingClientRect()
-      if (rect.top <= containerRect.top + 60) activeSection.value = item.id
+      if (rect.top <= 60) activeSection.value = item.id
     }
   })
 }
@@ -199,14 +185,10 @@ const handleScroll = () => {
 // 添加和移除滚动事件监听
 onMounted(() => {
   nextTick(() => {
-    if (scrollContainer.value)
-      (scrollContainer.value as HTMLElement).addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll);
   })
 })
 onUnmounted(() => {
-  const container = scrollContainer.value
-  if (container) {
-    ;(container as HTMLElement).removeEventListener('scroll', handleScroll)
-  }
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
