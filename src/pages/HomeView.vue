@@ -59,6 +59,7 @@
     border-radius: 30px;
     padding-block: 20px;
     z-index: 1000;
+    color: #444;
 
     a {
       display: inline-block;

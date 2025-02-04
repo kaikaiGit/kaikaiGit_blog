@@ -172,4 +172,10 @@ const typeMap: { [key: string]: 'primary' | 'warning' | 'success' | 'info' } = {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container {
+  border-radius: 14px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+</style>
