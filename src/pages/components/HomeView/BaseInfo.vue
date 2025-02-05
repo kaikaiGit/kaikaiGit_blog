@@ -19,8 +19,8 @@
         </div>
         <span>中国·深圳</span>
       </h2>
-
-      <div class="flex-horizontal" style="height: 350px;">
+      <!-- 个人图片 -->
+      <div class="flex-horizontal" style="height: 18em;" @click="()=>{ showDetail = true }">
         <div class="picBox">
           <img
             src="@/assets/images/myPic.jpg"
@@ -33,11 +33,119 @@
           </div>
         </div>
       </div>
+      <!-- 个人信息详情 -->
+      <el-dialog
+        v-model="showDetail"
+        title="个人信息"
+        :width="viewportStore.isMobile ? '85%': '460px'"
+      >
+        <div class="infos">
+          <ul>
+            <li>
+              <div class="flex-vertical">
+                <el-icon class="infoIcon">
+                  <User />
+                </el-icon>
+                姓名：
+              </div>
+              <div>吴嘉楷</div>
+            </li>
+
+            <li>
+              <div class="flex-vertical">
+                <el-icon class="infoIcon">
+                  <Male />
+                </el-icon>
+                性别：
+              </div>
+              <div>男</div>
+            </li>
+
+            <li>
+              <div class="flex-vertical">
+                <el-icon class="infoIcon">
+                  <Calendar />
+                </el-icon>
+                生日：
+              </div>
+              <div>2003-03-14</div>
+            </li>
+
+            <li>
+              <div class="flex-vertical">
+                <el-icon class="infoIcon">
+                  <Place />
+                </el-icon>
+                籍贯：
+              </div>
+              <div>广东汕头</div>
+            </li>
+
+            <li>
+              <div class="flex-vertical">
+                <el-icon class="infoIcon">
+                  <School />
+                </el-icon>
+                学校：
+              </div>
+              <div>深圳大学</div>
+            </li>
+
+            <li>
+              <div class="flex-vertical">
+                <el-icon class="infoIcon">
+                  <Key />
+                </el-icon>
+                专业：
+              </div>
+              <div>计算机科学与技术</div>
+            </li>
+
+            <li>
+              <div class="flex-vertical">
+                <el-icon class="infoIcon">
+                  <Iphone />
+                </el-icon>
+                电话：
+              </div>
+              <div>17825698559</div>
+            </li>
+
+            <li>
+              <div class="flex-vertical">
+                <el-icon class="infoIcon">
+                  <Message />
+                </el-icon>
+                邮箱：
+              </div>
+              <div>2431208434@qq.com</div>
+            </li>
+
+            <li>
+              <div class="flex-vertical">
+                <el-icon class="infoIcon">
+                  <Postcard />
+                </el-icon>
+                职位：
+              </div>
+              <div>前端开发工程师</div>
+            </li>
+          </ul>
+        </div>
+      </el-dialog>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useViewportStore } from '../../../stores/viewPort'
+
+const showDetail = ref(false)
+
+/* 移动设备相关 */
+const viewportStore = useViewportStore()
+</script>
 
 <style lang="scss" scoped>
 
@@ -133,7 +241,7 @@
       background-color: rgba(0, 0, 0, 0.5);
       text-align: center;
       color: white;
-      font-size: 28px;
+      font-size: 1.5rem;
       font-weight: 700;
       line-height: 1.7;
       transition: 0.3s all;
@@ -147,6 +255,30 @@
         background-clip: text;
         color: rgba(255, 255, 255, 0.6);
       }
+    }
+  }
+
+  .infos {
+    font-size: 18px;
+
+    ul {
+      width: 90%;
+      margin: 20px auto;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 10px;
+      border-bottom: 1px dashed #aaa;
+    }
+
+    li:last-of-type {
+      border-bottom: none;
+    }
+
+    .infoIcon {
+      margin-right: 6px;
     }
   }
 }
