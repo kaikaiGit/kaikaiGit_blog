@@ -6,6 +6,146 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1423",
+      "name": "html5",
+      "font_class": "html5",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "1444656",
+      "name": "git",
+      "font_class": "git",
+      "unicode": "e77f",
+      "unicode_decimal": 59263
+    },
+    {
+      "icon_id": "1444886",
+      "name": "material-ui",
+      "font_class": "material-ui",
+      "unicode": "e7e6",
+      "unicode_decimal": 59366
+    },
+    {
+      "icon_id": "3876062",
+      "name": "sass",
+      "font_class": "sass",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "3876406",
+      "name": "css3",
+      "font_class": "css",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "3876548",
+      "name": "bootstrap",
+      "font_class": "bootstrap",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "5634775",
+      "name": "node",
+      "font_class": "node",
+      "unicode": "f1fc",
+      "unicode_decimal": 61948
+    },
+    {
+      "icon_id": "11493403",
+      "name": "java",
+      "font_class": "java",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "11493418",
+      "name": "python",
+      "font_class": "python",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "13744032",
+      "name": "vue",
+      "font_class": "vue",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "15188548",
+      "name": "react",
+      "font_class": "react",
+      "unicode": "e712",
+      "unicode_decimal": 59154
+    },
+    {
+      "icon_id": "15378746",
+      "name": "redux",
+      "font_class": "redux",
+      "unicode": "ec7d",
+      "unicode_decimal": 60541
+    },
+    {
+      "icon_id": "15378906",
+      "name": "typescript",
+      "font_class": "typescript",
+      "unicode": "ecef",
+      "unicode_decimal": 60655
+    },
+    {
+      "icon_id": "17605456",
+      "name": "知识",
+      "font_class": "zhishi",
+      "unicode": "e813",
+      "unicode_decimal": 59411
+    },
+    {
+      "icon_id": "20784474",
+      "name": "c++语言",
+      "font_class": "cyuyan",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "29371899",
+      "name": "outline-java-script",
+      "font_class": "outline-java-script",
+      "unicode": "e704",
+      "unicode_decimal": 59140
+    },
+    {
+      "icon_id": "38515399",
+      "name": "uniapp",
+      "font_class": "uniapp",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "40379263",
+      "name": "element-plus",
+      "font_class": "element-plus",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "40403175",
+      "name": "pinia",
+      "font_class": "pinia",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "36037056",
+      "name": "技术栈",
+      "font_class": "jishuzhan",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
       "icon_id": "1345821",
       "name": "基本信息",
       "font_class": "jibenxinxi",

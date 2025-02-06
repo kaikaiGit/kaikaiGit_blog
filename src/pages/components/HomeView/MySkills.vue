@@ -3,8 +3,31 @@
     <el-tooltip class="box-item" effect="dark" content="前端相关技术栈" placement="right">
       <h1>专业技能</h1>
     </el-tooltip>
-    <div class="container">
-      <el-table :data="tableData" stripe style="width: 100%" @row-click="handleClick">
+    <div class="container flex-column">
+      <!-- 技能墙 -->
+      <div class="skills flex-horizontal-between">
+        <!-- 技术栈 -->
+        <div class="skill_1 card">
+          <div class="flex-vertical">
+            <i class="iconfont icon-jishuzhan"></i>
+            <span>技术栈</span>
+          </div>
+
+          <!-- 滚动技术栈图标 -->
+          <div class="mask">
+
+          </div>
+        </div>
+        <!-- 专业课 -->
+        <div class="skill_2 card">
+          <div class="flex-vertical">
+            <i class="iconfont icon-zhishi"></i>
+            <span>知识墙</span>
+          </div>
+        </div>
+      </div>
+      <!-- 技术栈介绍 -->
+      <el-table :data="tableData" stripe style="width: 100%" @row-click="handleClick" class="card">
         <el-table-column prop="title" label="技术栈" width="120" align="center" />
         <el-table-column prop="tag" label="类别" width="120" align="center">
           <template #default="item">
@@ -174,6 +197,28 @@ const typeMap: { [key: string]: 'primary' | 'warning' | 'success' | 'info' } = {
 
 <style lang="scss" scoped>
 .container {
+  gap: 30px;
+  font-size: 1rem;
+
+  .skills {
+    gap: 1rem;
+    .card{
+      flex: 1;
+      padding: 20px;
+
+      .iconfont{
+        font-size: 1.5rem;
+        margin-right: 6px;
+      }
+
+      .mask{
+        mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
+      }
+    }
+  }
+}
+
+.card {
   border-radius: 14px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;

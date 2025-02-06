@@ -10,6 +10,7 @@ export const useViewportStore = defineStore('viewPort', () => {
   //实时更新视口宽度
   function updateWidth() {
     viewportWidth.value = window.innerWidth
+    
     if (viewportWidth.value < mobileMaxWidth) isMobile.value = true
     else isMobile.value = false
   }

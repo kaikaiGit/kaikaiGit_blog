@@ -38,6 +38,7 @@
         v-model="showDetail"
         title="个人信息"
         :width="viewportStore.isMobile ? '85%': '460px'"
+        style="border-radius: 10px"
       >
         <div class="infos">
           <ul>
