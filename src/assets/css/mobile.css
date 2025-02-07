@@ -6,6 +6,9 @@ html {
   html {
     font-size: 12px;
   }
+  html .dogPic {
+    display: none;
+  }
   .body nav.homeNav {
     display: none;
   }

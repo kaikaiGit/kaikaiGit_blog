@@ -70,7 +70,7 @@
         </div>
       </div>
       <!-- 技术栈介绍 -->
-      <el-table :data="tableData" stripe style="width: 100%" @row-click="handleClick" class="card">
+      <el-table :data="tableData" stripe style="width: 100%" @row-click="handleClick" class="card" v-if="!viewportStore.isMobile">
         <el-table-column prop="title" label="技术栈" width="120" align="center" />
         <el-table-column prop="tag" label="类别" width="120" align="center">
           <template #default="item">
@@ -90,10 +90,15 @@
 </template>
 
 <script setup lang="ts">
+import { useViewportStore } from '../../../stores/viewPort'
+/* 移动设备相关 */
+const viewportStore = useViewportStore()
+
 //点击跳转到对应的技术栈文档
 const handleClick = (row: TableItem) => {
   window.open(row.url, '_blank')
 }
+
 //技术栈数据
 interface TableItem {
   title: string
@@ -223,6 +228,7 @@ const tableData: TableItem[] = [
     effect: 'plain'
   }
 ]
+
 //标签type映射表
 const typeMap: { [key: string]: 'primary' | 'warning' | 'success' | 'info' } = {
   语言: 'primary',
@@ -304,7 +310,8 @@ const courseData = [
     .card{
       flex: 1;
       padding: 25px 20px;
-      min-width: 350px;
+      min-width: 300px;
+      min-height: 140px;
 
       & div:first-of-type {
         margin-bottom: 25px;

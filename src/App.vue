@@ -26,6 +26,16 @@ onUnmounted(() => {
   <top-nav></top-nav>
   <!-- 内容 -->
   <router-view></router-view>
+  <!-- 装饰图 -->
+  <img src="@/assets/images/dogIcon.svg" class="dogPic"/>
 </template>
 
-<style scoped></style>
+<style scoped>
+.dogPic {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 150px;
+  z-index: 999;
+}
+</style>

@@ -1,6 +1,5 @@
 <template>
   <div class="body">
-    <img src="@/assets/images/dogIcon.svg" class="dogPic"/>
     <nav class="homeNav">
       <a :href="'#' + item.id" @click.prevent="scrollTo(item.id)" class="navItem"
       v-for="(item, index) in navList"
@@ -30,14 +29,6 @@
     url('@/assets/fonts/dd_Regular/bjJcJl24BO6h.woff2') format('woff2'),
     url('@/assets/fonts/dd_Regular/bjJcJl24BO6h.woff') format('woff');
   font-display: swap;
-}
-
-.dogPic {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 150px;
-  z-index: 999;
 }
 
 .body {
