@@ -15,7 +15,48 @@
 
           <!-- 滚动技术栈图标 -->
           <div class="mask">
+            <!-- 向右滚 -->
+            <div class="toLeft">
+              <i class="iconfont icon-css"></i>
+              <i class="iconfont icon-outline-java-script"></i>
+              <i class="iconfont icon-typescript"></i>
+              <i class="iconfont icon-sass"></i>
+              <i class="iconfont icon-bootstrap"></i>
+              <i class="iconfont icon-material-ui"></i>
+              <i class="iconfont icon-element-plus"></i>
+              <i class="iconfont icon-node"></i>
 
+              <i class="iconfont icon-html5"></i>
+              <i class="iconfont icon-css"></i>
+              <i class="iconfont icon-outline-java-script"></i>
+              <i class="iconfont icon-typescript"></i>
+              <i class="iconfont icon-sass"></i>
+              <i class="iconfont icon-bootstrap"></i>
+              <i class="iconfont icon-material-ui"></i>
+              <i class="iconfont icon-element-plus"></i>
+              <i class="iconfont icon-node"></i>
+            </div>
+            <div class="toRight">
+              <i class="iconfont icon-pinia"></i>
+              <i class="iconfont icon-react"></i>
+              <i class="iconfont icon-redux"></i>
+              <i class="iconfont icon-uniapp"></i>
+              <i class="iconfont icon-git"></i>
+              <i class="iconfont icon-java"></i>
+              <i class="iconfont icon-python"></i>
+              <i class="iconfont icon-cyuyan"></i>
+
+              <i class="iconfont icon-vue"></i>
+              <i class="iconfont icon-pinia"></i>
+              <i class="iconfont icon-react"></i>
+              <i class="iconfont icon-redux"></i>
+              <i class="iconfont icon-uniapp"></i>
+              <i class="iconfont icon-git"></i>
+              <i class="iconfont icon-java"></i>
+              <i class="iconfont icon-python"></i>
+              <i class="iconfont icon-cyuyan"></i>
+            </div>
+            <!-- 向左滚 -->
           </div>
         </div>
         <!-- 专业课 -->
@@ -204,7 +245,11 @@ const typeMap: { [key: string]: 'primary' | 'warning' | 'success' | 'info' } = {
     gap: 1rem;
     .card{
       flex: 1;
-      padding: 20px;
+      padding: 25px 20px;
+
+      & div:first-of-type {
+        margin-bottom: 25px;
+      }
 
       .iconfont{
         font-size: 1.5rem;
@@ -213,6 +258,19 @@ const typeMap: { [key: string]: 'primary' | 'warning' | 'success' | 'info' } = {
 
       .mask{
         mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
+
+        .iconfont {
+          font-size: 2.5rem;
+          margin-inline: 12px;
+        }
+
+        .toLeft {
+          animation: toLeft 10s linear infinite;
+        }
+
+        .toRight {
+          animation: toRight 10s linear infinite;
+        }
       }
     }
   }
@@ -222,5 +280,24 @@ const typeMap: { [key: string]: 'primary' | 'warning' | 'success' | 'info' } = {
   border-radius: 14px;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
+}
+
+/* 动画函数 */
+@keyframes toLeft {
+  0% {
+    transform: translateX(-15%);
+  }
+  100% {
+    transform: translateX(-145%);
+  }
+}
+
+@keyframes toRight {
+  0% {
+    transform: translateX(-145%);
+  }
+  100% {
+    transform: translateX(-18%);
+  }
 }
 </style>
