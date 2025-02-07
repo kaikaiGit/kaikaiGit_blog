@@ -25,5 +25,6 @@ declare module 'vue' {
     SvgIcon: typeof import('./src/components/svg-icon/SvgIcon.vue')['default']
     ThemeSwitch: typeof import('./src/components/ThemeSwitch.vue')['default']
     TopNav: typeof import('./src/components/TopNav.vue')['default']
+    WordCloud: typeof import('./src/components/WordCloud.vue')['default']
   }
 }

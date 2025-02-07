@@ -2,19 +2,11 @@
 import { RouterView } from 'vue-router'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useViewportStore } from './stores/viewPort'
+import { debounce } from '@/utils/index.js'
 
 const viewportStore = useViewportStore()
 
-/* 防抖函数 */
-function debounce(fn, delay) {
-  let timer = null;
-  return function (...args) {
-    if (timer) clearTimeout(timer); // 清除之前的定时器
-    timer = setTimeout(() => {
-      fn.apply(this, args); // 延迟执行
-    }, delay);
-  };
-}
+
 // 防抖后的更新函数
 const debouncedUpdateWidth = debounce(viewportStore.updateWidth, 100);
 

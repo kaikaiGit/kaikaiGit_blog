@@ -65,6 +65,8 @@
             <i class="iconfont icon-zhishi"></i>
             <span>知识墙</span>
           </div>
+
+          <word-cloud :ciYun = "courseData" />
         </div>
       </div>
       <!-- 技术栈介绍 -->
@@ -234,6 +236,61 @@ const typeMap: { [key: string]: 'primary' | 'warning' | 'success' | 'info' } = {
   版本控制: 'info',
   素材库: 'info'
 }
+
+const courseData = [
+  {
+    name: '计算机网络',
+    value: 1
+  },
+  {
+    name: '计算机系统',
+    value: 2
+  },
+  {
+    name: '算法设计与分析',
+    value: 3
+  },
+  {
+    name: '计算机组成原理',
+    value: 4
+  },
+  {
+    name: '软件工程',
+    value: 5
+  },
+  {
+    name: 'web开发与人机交互',
+    value: 6
+  },
+  {
+    name: '计算机图形学',
+    value: 7
+  },
+  {
+    name: '计算机伦理',
+    value: 8
+  },
+  {
+    name: '操作系统',
+    value: 9
+  },
+  {
+    name: '数据结构',
+    value: 10 
+  },
+  {
+    name: '数据库系统',
+    value: 11
+  },           
+  {
+    name: '互联网编程',
+    value: 12
+  },
+  {
+    name: '基于Web的编程',
+    value: 13
+  }
+]
 </script>
 
 <style lang="scss" scoped>
@@ -243,9 +300,11 @@ const typeMap: { [key: string]: 'primary' | 'warning' | 'success' | 'info' } = {
 
   .skills {
     gap: 1rem;
+    flex-wrap: wrap;
     .card{
       flex: 1;
       padding: 25px 20px;
+      min-width: 350px;
 
       & div:first-of-type {
         margin-bottom: 25px;
