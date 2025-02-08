@@ -1,0 +1,43 @@
+!<template>
+  <div class="card">
+    <div class="flex-vertical">
+      <i class="iconfont" :class="iconName"></i>
+      <span>{{ title }}</span>
+    </div>
+
+    <slot>默认内容</slot>
+  </div>
+</template>
+
+<script setup lang="ts">
+const props = defineProps({
+  iconName: {
+    type: String,
+    default: '',
+    required: false
+  },
+  title: {
+    type: String,
+    default: '',
+    required: false
+  },
+});
+</script>
+
+<style lang="scss" scoped>
+.card {
+  flex: 1;
+  padding: 25px 20px;
+  min-width: 300px;
+  min-height: 140px;
+
+  .flex-vertical {
+    margin-bottom: 25px;
+  }
+}
+
+.iconfont{        
+  font-size: 1.5rem;
+  margin-right: 6px;
+}
+</style>

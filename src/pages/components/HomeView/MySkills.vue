@@ -7,12 +7,7 @@
       <!-- 技能墙 -->
       <div class="skills flex-horizontal-between">
         <!-- 技术栈 -->
-        <div class="skill_1 card">
-          <div class="flex-vertical">
-            <i class="iconfont icon-jishuzhan"></i>
-            <span>技术栈</span>
-          </div>
-
+        <card-box iconName="icon-zhishi" title="知识墙">
           <!-- 滚动技术栈图标 -->
           <div class="mask">
             <!-- 向右滚 -->
@@ -68,16 +63,12 @@
             </div>
             <!-- 向左滚 -->
           </div>
-        </div>
-        <!-- 专业课 -->
-        <div class="skill_2 card">
-          <div class="flex-vertical">
-            <i class="iconfont icon-zhishi"></i>
-            <span>知识墙</span>
-          </div>
+        </card-box>
 
+        <!-- 专业课 -->
+        <card-box iconName="icon-zhishi" title="知识墙">
           <word-cloud :ciYun = "courseData" />
-        </div>
+        </card-box>
       </div>
       <!-- 技术栈介绍 -->
       <el-table :data="tableData" stripe style="width: 100%" @row-click="handleClick" class="card" v-if="!viewportStore.isMobile">
@@ -317,36 +308,25 @@ const courseData = [
   .skills {
     gap: 1rem;
     flex-wrap: wrap;
-    .card{
-      flex: 1;
-      padding: 25px 20px;
-      min-width: 300px;
-      min-height: 140px;
 
-      & div:first-of-type {
+    .mask{
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
+
+      &>div:first-of-type {
         margin-bottom: 25px;
       }
 
-      .iconfont{        
-        font-size: 1.5rem;
-        margin-right: 6px;
+      .iconfont {
+        font-size: 40px;
+        margin-inline: 12px;
       }
 
-      .mask{
-        mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
+      .toLeft {
+        animation: toLeft 10s linear infinite;
+      }
 
-        .iconfont {
-          font-size: 40px;
-          margin-inline: 12px;
-        }
-
-        .toLeft {
-          animation: toLeft 10s linear infinite;
-        }
-
-        .toRight {
-          animation: toRight 10s linear infinite;
-        }
+      .toRight {
+        animation: toRight 10s linear infinite;
       }
     }
   }
