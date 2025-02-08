@@ -35,6 +35,11 @@
               <i class="iconfont icon-material-ui"></i>
               <i class="iconfont icon-element-plus"></i>
               <i class="iconfont icon-node"></i>
+
+              <i class="iconfont icon-html5"></i>
+              <i class="iconfont icon-css"></i>
+              <i class="iconfont icon-outline-java-script"></i>
+              <i class="iconfont icon-typescript"></i>
             </div>
             <div class="toRight">
               <i class="iconfont icon-pinia"></i>
@@ -55,6 +60,11 @@
               <i class="iconfont icon-java"></i>
               <i class="iconfont icon-python"></i>
               <i class="iconfont icon-cyuyan"></i>
+
+              <i class="iconfont icon-vue"></i>
+              <i class="iconfont icon-pinia"></i>
+              <i class="iconfont icon-react"></i>
+              <i class="iconfont icon-redux"></i>
             </div>
             <!-- 向左滚 -->
           </div>
@@ -317,7 +327,7 @@ const courseData = [
         margin-bottom: 25px;
       }
 
-      .iconfont{
+      .iconfont{        
         font-size: 1.5rem;
         margin-right: 6px;
       }
@@ -326,7 +336,7 @@ const courseData = [
         mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 1.0) 10%, rgba(0, 0, 0, 1.0) 90%, transparent 100%);
 
         .iconfont {
-          font-size: 2.5rem;
+          font-size: 40px;
           margin-inline: 12px;
         }
 
@@ -351,19 +361,19 @@ const courseData = [
 /* 动画函数 */
 @keyframes toLeft {
   0% {
-    transform: translateX(-15%);
+    transform: translateX(-70px);
   }
   100% {
-    transform: translateX(-145%);
+    transform: translateX(-655px);
   }
 }
 
 @keyframes toRight {
   0% {
-    transform: translateX(-145%);
+    transform: translateX(-645px);
   }
   100% {
-    transform: translateX(-18%);
+    transform: translateX(-70px);
   }
 }
 </style>
