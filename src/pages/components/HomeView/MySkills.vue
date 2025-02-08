@@ -354,7 +354,7 @@ const courseData = [
 
 .card {
   border-radius: 14px;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px 0 var(--boxShadowColor);
   overflow: hidden;
 }
 

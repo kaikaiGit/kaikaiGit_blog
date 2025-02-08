@@ -9,6 +9,7 @@
 :root.dark {
   background-color: var(--darkBgc);
   color: var(--darkTxtColor) !important;
+  --boxShadowColor:rgba(255, 255, 255, 0.1) ;
 }
 
 //白天模式主题
@@ -16,7 +17,6 @@
   background-color: var(--bgc);
   background:no-repeat top center url('@/assets/images/bg-top.webp'), 
             no-repeat bottom center url('@/assets/images/bg-bottom.webp');
-  
 }
 
 //全局css变量
@@ -31,6 +31,7 @@
   --borderColor: #eee;
   --redBgc: #e4393c;
   --greyBgc: #eee;
+  --boxShadowColor: rgba(0, 0, 0, 0.1);
 }
 
 :root {
