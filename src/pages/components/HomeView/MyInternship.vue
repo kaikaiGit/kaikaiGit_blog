@@ -1,11 +1,11 @@
 <template>
   <div class="myInfo">
     <h1>实习经历</h1>
-    <div class="content">
+    <card-box class="content">
       <div class="flex-horizontal-between">
         <span class="company flex-vertical">深圳市区块跳动科技有限公司</span>
         <el-tag type="primary" effect="dark" round disable-transitions>前端实习生</el-tag>
-        <span class="flex-vertical">2024.07 - 至今</span>
+        <span class="flex-vertical">2024.07 - 2024.09</span>
       </div>
       <!-- 实习项目内容 -->
       <el-collapse class="company-projects">
@@ -42,14 +42,15 @@
               项目链接：
               <a href="https://monopolygo.game/" target="_blank">官方网站</a>
             </li>
-            <li>项目描述： 基于Nextra + i18n + nodejs的一款用于推流的游戏攻略网站</li>
+            <li>项目描述： 基于Nextra + i18n + nodejs的一款用于推流的大富翁游戏攻略网站</li>
             <li>
               项目职责： <br />
               1.负责接入 disqus
               第三方评论库的服务，以最快的开发流程实现评论区功能模块，并简化评论管理流程。<br />
               2.根据产品的调研结果，在nextra、i18n多语言框架基础上，使用mdx语法修改、发布文章。<br />
               3.使用 node.js 编写了一套自动化脚本，用于读取文章内容及多语言配置项，通过调用 openai
-              的 api 接口翻译读取到的信息后输出为其他语言版本的文件，极大加快了翻译流程。
+              的 api 接口翻译读取到的信息后输出为其他语言版本的文件，极大加快了翻译流程。<br />
+              4.在保证网页SEO的同时，编写node.js脚本自动化更改项目json文件（在代码中被引用），并自动与GitHub仓库代码同步，从而实现文章的自动化更新与发布。
             </li>
           </ul>
         </el-collapse-item>
@@ -80,7 +81,7 @@
           </ul>
         </el-collapse-item>
       </el-collapse>
-    </div>
+    </card-box>
   </div>
 </template>
 
