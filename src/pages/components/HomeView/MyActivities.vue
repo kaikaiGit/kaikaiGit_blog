@@ -1,87 +1,96 @@
 <template>
   <div class="myInfo">
     <h1>校园经历</h1>
-    <h2>校园风光</h2>
-    <div class="schoolBox">
-      <img src="@/assets/images/schoolPic.webp" alt="ShenZhen University" style="width: 100%" />
+
+    <div class="container flex-column">
+      <div class="flex-horizontal-between" style="    gap: 1rem;
+    flex-wrap: wrap;">
+        <card-box title="校园风光" iconName="icon-xuexiao_xuexiaoxinxi" class="flex-column">
+          <div class="schoolBox">
+            <img src="@/assets/images/schoolPic.webp" alt="ShenZhen University" style="width: 100%" />
+          </div>
+        </card-box>
+
+        <card-box title="基本情况" iconName="icon-ziliao">
+          <ul class="infos">
+            <li>
+              <div class="left">学校：</div>
+              <div class="right">深圳大学</div>
+            </li>
+            <li>
+              <div class="left">学院：</div>
+              <div class="right">计算机与软件学院</div>
+            </li>
+            <li>
+              <div class="left">专业：</div>
+              <div class="right">计算机科学与技术(创新班)</div>
+            </li>
+            <li>
+              <div class="left">绩点：</div>
+              <div class="right">4.01(top 5%)</div>
+            </li>
+            <li>
+              <div class="left">职务：</div>
+              <div class="right">班级干部、志愿者协会副会长、智能基座软开部成员</div>
+            </li>
+          </ul>
+        </card-box>
+      </div>
+
+      <card-box title="活动碎片" iconName="icon-kejiluntan">
+        <el-carousel :height="picHeight" id="picCarousel" type="card">
+          <el-carousel-item>
+            <img
+              src="@/assets/images/activity1.jpg"
+              alt=""
+              height="100%"
+              width="100%"
+              style="object-fit: cover"
+            />
+          </el-carousel-item>
+
+          <el-carousel-item>
+            <img
+              src="@/assets/images/activity2.jpg"
+              alt=""
+              height="100%"
+              width="100%"
+              style="object-fit: cover"
+            />
+          </el-carousel-item>
+
+          <el-carousel-item>
+            <img
+              src="@/assets/images/activity3.jpg"
+              alt=""
+              height="100%"
+              width="100%"
+              style="object-fit: cover"
+            />
+          </el-carousel-item>
+
+          <el-carousel-item>
+            <img
+              src="@/assets/images/activity4.jpg"
+              alt=""
+              height="100%"
+              width="100%"
+              style="object-fit: cover"
+            />
+          </el-carousel-item>
+
+          <el-carousel-item>
+            <img
+              src="@/assets/images/activity5.jpg"
+              alt=""
+              height="100%"
+              width="100%"
+              style="object-fit: cover"
+            />
+          </el-carousel-item>
+        </el-carousel>
+      </card-box>
     </div>
-
-    <h2>基本情况</h2>
-    <ul class="infos">
-      <li>
-        <div class="left">学校：</div>
-        <div class="right">深圳大学</div>
-      </li>
-      <li>
-        <div class="left">学院：</div>
-        <div class="right">计算机与软件学院</div>
-      </li>
-      <li>
-        <div class="left">专业：</div>
-        <div class="right">计算机科学与技术(创新班)</div>
-      </li>
-      <li>
-        <div class="left">绩点：</div>
-        <div class="right">4.01(top 5%)</div>
-      </li>
-      <li>
-        <div class="left">职务：</div>
-        <div class="right">班级干部、志愿者协会副会长、智能基座软开部成员</div>
-      </li>
-    </ul>
-
-    <h2>活动碎片</h2>
-    <el-carousel :height="picHeight" id="picCarousel" type="card">
-      <el-carousel-item>
-        <img
-          src="@/assets/images/activity1.jpg"
-          alt=""
-          height="100%"
-          width="100%"
-          style="object-fit: cover"
-        />
-      </el-carousel-item>
-
-      <el-carousel-item>
-        <img
-          src="@/assets/images/activity2.jpg"
-          alt=""
-          height="100%"
-          width="100%"
-          style="object-fit: cover"
-        />
-      </el-carousel-item>
-
-      <el-carousel-item>
-        <img
-          src="@/assets/images/activity3.jpg"
-          alt=""
-          height="100%"
-          width="100%"
-          style="object-fit: cover"
-        />
-      </el-carousel-item>
-
-      <el-carousel-item>
-        <img
-          src="@/assets/images/activity4.jpg"
-          alt=""
-          height="100%"
-          width="100%"
-          style="object-fit: cover"
-        />
-      </el-carousel-item>
-
-      <el-carousel-item>
-        <img
-          src="@/assets/images/activity5.jpg"
-          alt=""
-          height="100%"
-          width="100%"
-          style="object-fit: cover"
-        />
-      </el-carousel-item>
-    </el-carousel>
   </div>
 </template>
 
@@ -108,6 +117,11 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  gap: 30px;
+  font-size: 1rem;
+}
+
 h2 {
   font-size: 20px;
   line-height: 2;
@@ -115,9 +129,10 @@ h2 {
 }
 .schoolBox {
   overflow: hidden;
-  margin-bottom: 30px;
   & img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: 0.8s all;
   }
 
@@ -129,13 +144,12 @@ h2 {
 .infos {
   font-size: 18px;
   background-color: rgba($color: wheat, $alpha: 0.3);
-  border-radius: 10px;
-  margin-bottom: 30px;
+  border-radius: 3px;
 
   li {
     display: flex;
     justify-content: space-between;
-    padding: 10px 10px;
+    padding: 12px;
     border-bottom: 1px dashed #aaa;
     .left {
       min-width: 60px;

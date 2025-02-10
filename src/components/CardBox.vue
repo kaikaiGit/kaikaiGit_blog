@@ -30,6 +30,9 @@ const props = defineProps({
   padding: 25px 20px;
   min-width: 300px;
   min-height: 140px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px 0 var(--boxShadowColor);
+  overflow: hidden;
 
   .flex-vertical {
     margin-bottom: 25px;

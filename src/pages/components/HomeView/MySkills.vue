@@ -1,13 +1,12 @@
 <template>
   <div class="myInfo">
-    <el-tooltip class="box-item" effect="dark" content="前端相关技术栈" placement="right">
-      <h1>专业技能</h1>
-    </el-tooltip>
+    <h1>专业技能</h1>
+
     <div class="container flex-column">
       <!-- 技能墙 -->
       <div class="skills flex-horizontal-between">
         <!-- 技术栈 -->
-        <card-box iconName="icon-zhishi" title="知识墙">
+        <card-box iconName="icon-jishuzhan" title="技术栈">
           <!-- 滚动技术栈图标 -->
           <div class="mask">
             <!-- 向右滚 -->
@@ -71,7 +70,10 @@
         </card-box>
       </div>
       <!-- 技术栈介绍 -->
-      <el-table :data="tableData" stripe style="width: 100%" @row-click="handleClick" class="card" v-if="!viewportStore.isMobile">
+      <el-table :data="tableData" stripe 
+      style="width: 100%;  border-radius: 14px;
+      box-shadow: 0 2px 12px 0 var(--boxShadowColor);
+      overflow: hidden;" @row-click="handleClick" v-if="!viewportStore.isMobile">
         <el-table-column prop="title" label="技术栈" width="120" align="center" />
         <el-table-column prop="tag" label="类别" width="120" align="center">
           <template #default="item">
@@ -330,12 +332,6 @@ const courseData = [
       }
     }
   }
-}
-
-.card {
-  border-radius: 14px;
-  box-shadow: 0 2px 12px 0 var(--boxShadowColor);
-  overflow: hidden;
 }
 
 /* 动画函数 */

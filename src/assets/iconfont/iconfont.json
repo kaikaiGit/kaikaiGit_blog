@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "7765186",
+      "name": "学校_学校信息",
+      "font_class": "xuexiao_xuexiaoxinxi",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "34639339",
+      "name": "资料",
+      "font_class": "ziliao",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
       "icon_id": "1423",
       "name": "html5",
       "font_class": "html5",
