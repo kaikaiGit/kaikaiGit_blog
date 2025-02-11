@@ -26,6 +26,7 @@
 .flex-column {
   display: flex;
   flex-direction: column;
+  gap: 30px;
 }
 
 .myInfo h1 {

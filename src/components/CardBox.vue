@@ -1,6 +1,6 @@
 !<template>
   <div class="card">
-    <div class="flex-vertical">
+    <div class="flex-vertical" v-if="title !== ''">
       <i class="iconfont" :class="iconName"></i>
       <span>{{ title }}</span>
     </div>

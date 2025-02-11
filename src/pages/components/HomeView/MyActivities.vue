@@ -5,7 +5,7 @@
     <div class="container flex-column">
       <div class="flex-horizontal-between" style="    gap: 1rem;
     flex-wrap: wrap;">
-        <card-box title="校园风光" iconName="icon-xuexiao_xuexiaoxinxi" class="flex-column">
+        <card-box title="校园风光" iconName="icon-xuexiao_xuexiaoxinxi" class="flex-column" style="gap: 0">
           <div class="schoolBox">
             <img src="@/assets/images/schoolPic.webp" alt="ShenZhen University" style="width: 100%" />
           </div>
@@ -118,7 +118,6 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 .container {
-  gap: 30px;
   font-size: 1rem;
 }
 
@@ -128,6 +127,7 @@ h2 {
   text-align: center;
 }
 .schoolBox {
+  flex: 1;
   overflow: hidden;
   & img {
     width: 100%;

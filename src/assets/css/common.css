@@ -12,6 +12,7 @@
 }
 
 :root {
+  letter-spacing: 0.05em;
   background-color: var(--bgc);
   background: no-repeat top center url("@/assets/images/bg-top.webp"), no-repeat bottom center url("@/assets/images/bg-bottom.webp");
 }

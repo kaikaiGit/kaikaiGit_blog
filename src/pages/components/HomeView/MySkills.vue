@@ -304,7 +304,6 @@ const courseData = [
 
 <style lang="scss" scoped>
 .container {
-  gap: 30px;
   font-size: 1rem;
 
   .skills {
