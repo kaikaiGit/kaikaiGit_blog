@@ -2,41 +2,6 @@
   <div class="myInfo">
     <h1>荣誉奖项</h1>
 
-    <div class="content flex-vertical">
-      <div class="prizeInfo flex-column">
-        <div class="item flex-vertical">
-          <div class="prize">深圳大学学习之星二等奖</div>
-          <div class="space"></div>
-        </div>
-
-        <div class="item flex-vertical">
-          <div class="space"></div>
-          <div class="prize">深圳大学优秀学生干部</div>
-        </div>
-
-        <div class="item flex-vertical">
-          <div class="prize">蓝桥杯软件赛C++组省赛二等奖</div>
-          <div class="space"></div>
-        </div>
-
-        <div class="item flex-vertical">
-          <div class="space"></div>
-          <div class="prize">HarmonyOS应用开发者高级认证</div>
-        </div>
-
-        <div class="item flex-vertical">
-          <div class="prize">工业互联网平台开发工程师初级证书</div>
-          <div class="space"></div>
-        </div>
-
-        <div class="item flex-vertical">
-          <div class="space"></div>
-          <div class="prize">腾讯开源结课证书</div>
-        </div>
-      </div>
-      <div class="flex-horizontal"><img src="@/assets/images/prizeFigure.svg" width="250px" /></div>
-    </div>
-
     <el-carousel :height="picHeight" id="picCarousel" type="card">
       <el-carousel-item>
         <img
@@ -85,7 +50,13 @@ const picHeight = ref('400px')
 const calPicHeight = () => {
   const picBox = document.querySelector('#picCarousel')
   if (!picBox) return
-  picHeight.value = `${picBox.clientWidth * 0.7}px`
+  if(picBox.clientWidth > 600){
+    console.log(1111);
+    picHeight.value = `${600 * 0.72}px`
+  }
+    
+  else
+    picHeight.value = `${picBox.clientWidth * 0.75}px`
 }
 
 onMounted(() => {
@@ -102,47 +73,8 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@media screen and (max-width: 980px) {
-  .content .flex-horizontal {
-    display: none;
-  }
-}
-
-.content {
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 40px;
-  & > div:nth-child(2) {
-    flex: 1;
-  }
-}
-
-.prizeInfo {
-  border-radius: 16px;
-  gap: 30px;
-  box-sizing: border-box;
-  padding: 140px 60px 70px;
-  background: url(@/assets/images/prizeBg.webp) center/100% no-repeat;
-  width: 400px;
-  height: 550px;
-  min-width: 360px;
-
-  .item {
-    color: white;
-    font-size: 12px;
-    font-weight: 500;
-    white-space: nowrap;
-
-    .prize {
-      padding: 8px 12px;
-      background-color: var(--redBgc);
-      border-radius: 8px;
-    }
-    .space {
-      flex: 1;
-      height: 0px;
-      border-bottom: 1px dashed white;
-    }
-  }
+#picCarousel {
+  max-width: 600px;
+  margin-inline: auto;
 }
 </style>

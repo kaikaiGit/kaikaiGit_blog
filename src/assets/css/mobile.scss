@@ -9,13 +9,11 @@ html {
     .dogPic {
       display: none;
     }
-
-    .card .el-tag {
+  }
+  .body {
+    nav.homeNav, .card .el-tag{
       display: none;
     }
-  }
-  .body nav.homeNav {
-    display: none;
   }
   .body .container .mainInfo {
     flex: 0;

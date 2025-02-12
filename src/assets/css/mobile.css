@@ -9,10 +9,7 @@ html {
   html .dogPic {
     display: none;
   }
-  html .card .el-tag {
-    display: none;
-  }
-  .body nav.homeNav {
+  .body nav.homeNav, .body .card .el-tag {
     display: none;
   }
   .body .container .mainInfo {
