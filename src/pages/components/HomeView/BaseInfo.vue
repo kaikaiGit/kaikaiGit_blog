@@ -159,7 +159,7 @@ const viewportStore = useViewportStore()
 
   .mainInfo{
     flex: 1;
-    min-width: 170px;
+    min-width: 175px;
     div {
       font-size: 2rem;
       font-weight: 600;

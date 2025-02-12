@@ -9,6 +9,9 @@ html {
   html .dogPic {
     display: none;
   }
+  html .card .el-tag {
+    display: none;
+  }
   .body nav.homeNav {
     display: none;
   }

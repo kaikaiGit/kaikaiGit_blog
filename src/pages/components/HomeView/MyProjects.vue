@@ -98,6 +98,7 @@
 
 <style lang="scss" scoped>
 .content {
+  font-size: 1rem;
   .company {
     font-weight: bolder;
   }
