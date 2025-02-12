@@ -15,6 +15,7 @@
 //白天模式主题
 :root {
   letter-spacing: 0.05em;
+  font-family: Inter, "Inter var", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
   background-color: var(--bgc);
   background:no-repeat top center url('@/assets/images/bg-top.webp'), 
             no-repeat bottom center url('@/assets/images/bg-bottom.webp');

@@ -51,7 +51,6 @@ const calPicHeight = () => {
   const picBox = document.querySelector('#picCarousel')
   if (!picBox) return
   if(picBox.clientWidth > 600){
-    console.log(1111);
     picHeight.value = `${600 * 0.72}px`
   }
     
