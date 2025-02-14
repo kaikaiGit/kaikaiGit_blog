@@ -10,118 +10,107 @@
 
 <script setup>
 import { ref, reactive, onMounted, onBeforeUnmount } from 'vue';
+import { throttle } from '@/utils/index.js'
 
-    const curzr = ref(null);
-    const position = ref({
-      distanceX: 0,
-      distanceY: 0,
-      distance: 0,
-      pointerX: 0,
-      pointerY: 0,
+const curzr = ref(null);
+const position = ref({
+  distanceX: 0,
+  distanceY: 0,
+  distance: 0,
+  pointerX: 0,
+  pointerY: 0,
+});
+const previousPointerX = ref(0);
+const previousPointerY = ref(0);
+const angle = ref(0);
+const previousAngle = ref(0);
+const angleDisplace = ref(0);
+const degrees = 57.296;
+const cursorSize = ref(0);
+
+const move = (event, root) => {
+  previousPointerX.value = position.value.pointerX;
+  previousPointerY.value = position.value.pointerY;
+  position.value.pointerX = event.pageX + root.getBoundingClientRect().x;
+  position.value.pointerY = event.pageY + root.getBoundingClientRect().y;
+  position.value.distanceX = previousPointerX.value - position.value.pointerX;
+  position.value.distanceY = previousPointerY.value - position.value.pointerY;
+  position.value.distance = Math.sqrt(position.value.distanceY ** 2 + position.value.distanceX ** 2);
+
+  curzr.value.style.transform = `translate3d(${position.value.pointerX}px, ${position.value.pointerY}px, 0)`;
+
+  if (position.value.distance > 1) {
+    rotate(position.value);
+  } else {
+    curzr.value.style.transform += ` rotate(${angleDisplace.value}deg)`;
+  }
+};
+
+const rotate = (position) => {
+  let unsortedAngle = Math.atan(Math.abs(position.distanceY) / Math.abs(position.distanceX)) * degrees;
+  let modAngle;
+  const style = curzr.value.style;
+  previousAngle.value = angle.value;
+
+  if (position.distanceX <= 0 && position.distanceY >= 0) {
+    angle.value = 90 - unsortedAngle + 0;
+  } else if (position.distanceX < 0 && position.distanceY < 0) {
+    angle.value = unsortedAngle + 90;
+  } else if (position.distanceX >= 0 && position.distanceY <= 0) {
+    angle.value = 90 - unsortedAngle + 180;
+  } else if (position.distanceX > 0 && position.distanceY > 0) {
+    angle.value = unsortedAngle + 270;
+  }
+
+  if (isNaN(angle.value)) {
+    angle.value = previousAngle.value;
+  } else {
+    if (angle.value - previousAngle.value <= -270) {
+      angleDisplace.value += 360 + angle.value - previousAngle.value;
+    } else if (angle.value - previousAngle.value >= 270) {
+      angleDisplace.value += angle.value - previousAngle.value - 360;
+    } else {
+      angleDisplace.value += angle.value - previousAngle.value;
+    }
+  }
+  style.transform += ` rotate(${angleDisplace.value}deg)`;
+
+  setTimeout(() => {
+    modAngle = angleDisplace.value >= 0 ? angleDisplace.value % 360 : 360 + angleDisplace.value % 360;
+    if (modAngle >= 45 && modAngle < 135) {
+      style.left = `${-cursorSize.value}px`;
+      style.top = `${-cursorSize.value / 2}px`;
+    } else if (modAngle >= 135 && modAngle < 225) {
+      style.left = `${-cursorSize.value / 2}px`;
+      style.top = `${-cursorSize.value}px`;
+    } else if (modAngle >= 225 && modAngle < 315) {
+      style.left = '0px';
+      style.top = `${-cursorSize.value / 2}px`;
+    } else {
+      style.left = `${-cursorSize.value / 2}px`;
+      style.top = '0px';
+    }
+  }, 0);
+};
+
+onMounted(() => {
+  if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    cursorSize.value = Number(getComputedStyle(curzr.value).getPropertyValue('--size').slice(0, -2));
+    curzr.value.removeAttribute('hidden');
+    const throttledMove = throttle(move, 16); // Throttle to 60fps (~16ms delay)
+    document.body.addEventListener('mousemove', (event) => {
+      throttledMove(event, document.body);
     });
-    const previousPointerX = ref(0);
-    const previousPointerY = ref(0);
-    const angle = ref(0);
-    const previousAngle = ref(0);
-    const angleDisplace = ref(0);
-    const degrees = 57.296;
-    const cursorSize = ref(0);
+  } else {
+    // Cleanup if the device is mobile
+    curzr.value?.remove();
+  }
+});
 
-    // Throttle the move event to optimize performance
-    const throttle = (fn, delay) => {
-      let lastCall = 0;
-      return (...args) => {
-        const now = Date.now();
-        if (now - lastCall >= delay) {
-          lastCall = now;
-          fn(...args);
-        }
-      };
-    };
-
-    const move = (event, root) => {
-      previousPointerX.value = position.value.pointerX;
-      previousPointerY.value = position.value.pointerY;
-      position.value.pointerX = event.pageX + root.getBoundingClientRect().x;
-      position.value.pointerY = event.pageY + root.getBoundingClientRect().y;
-      position.value.distanceX = previousPointerX.value - position.value.pointerX;
-      position.value.distanceY = previousPointerY.value - position.value.pointerY;
-      position.value.distance = Math.sqrt(position.value.distanceY ** 2 + position.value.distanceX ** 2);
-
-      curzr.value.style.transform = `translate3d(${position.value.pointerX}px, ${position.value.pointerY}px, 0)`;
-
-      if (position.value.distance > 1) {
-        rotate(position.value);
-      } else {
-        curzr.value.style.transform += ` rotate(${angleDisplace.value}deg)`;
-      }
-    };
-
-    const rotate = (position) => {
-      let unsortedAngle = Math.atan(Math.abs(position.distanceY) / Math.abs(position.distanceX)) * degrees;
-      let modAngle;
-      const style = curzr.value.style;
-      previousAngle.value = angle.value;
-
-      if (position.distanceX <= 0 && position.distanceY >= 0) {
-        angle.value = 90 - unsortedAngle + 0;
-      } else if (position.distanceX < 0 && position.distanceY < 0) {
-        angle.value = unsortedAngle + 90;
-      } else if (position.distanceX >= 0 && position.distanceY <= 0) {
-        angle.value = 90 - unsortedAngle + 180;
-      } else if (position.distanceX > 0 && position.distanceY > 0) {
-        angle.value = unsortedAngle + 270;
-      }
-
-      if (isNaN(angle.value)) {
-        angle.value = previousAngle.value;
-      } else {
-        if (angle.value - previousAngle.value <= -270) {
-          angleDisplace.value += 360 + angle.value - previousAngle.value;
-        } else if (angle.value - previousAngle.value >= 270) {
-          angleDisplace.value += angle.value - previousAngle.value - 360;
-        } else {
-          angleDisplace.value += angle.value - previousAngle.value;
-        }
-      }
-      style.transform += ` rotate(${angleDisplace.value}deg)`;
-
-      setTimeout(() => {
-        modAngle = angleDisplace.value >= 0 ? angleDisplace.value % 360 : 360 + angleDisplace.value % 360;
-        if (modAngle >= 45 && modAngle < 135) {
-          style.left = `${-cursorSize.value}px`;
-          style.top = `${-cursorSize.value / 2}px`;
-        } else if (modAngle >= 135 && modAngle < 225) {
-          style.left = `${-cursorSize.value / 2}px`;
-          style.top = `${-cursorSize.value}px`;
-        } else if (modAngle >= 225 && modAngle < 315) {
-          style.left = '0px';
-          style.top = `${-cursorSize.value / 2}px`;
-        } else {
-          style.left = `${-cursorSize.value / 2}px`;
-          style.top = '0px';
-        }
-      }, 0);
-    };
-
-    onMounted(() => {
-      if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        cursorSize.value = Number(getComputedStyle(curzr.value).getPropertyValue('--size').slice(0, -2));
-        curzr.value.removeAttribute('hidden');
-        const throttledMove = throttle(move, 16); // Throttle to 60fps (~16ms delay)
-        document.body.addEventListener('mousemove', (event) => {
-          throttledMove(event, document.body);
-        });
-      } else {
-        // Cleanup if the device is mobile
-        curzr.value?.remove();
-      }
-    });
-
-    onBeforeUnmount(() => {
-      // Cleanup when the component is about to be destroyed
-      document.body.removeEventListener('mousemove', move);
-    });
+onBeforeUnmount(() => {
+  // Cleanup when the component is about to be destroyed
+  document.body.removeEventListener('mousemove', move);
+});
 
 </script>
 

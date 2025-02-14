@@ -1,5 +1,5 @@
 <template>
-  <a class="select-none" title="Toggle Color Scheme" @click="()=>{isdark = !isdark}">
+  <a class="select-none" title="Toggle Color Scheme" @click="toggleDark">
     <svg v-show="!isdark" class="svg-dash" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
       <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
         <path
@@ -196,11 +196,6 @@
 }
 </style>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-import { useDark } from '@vueuse/core' //主题切换相关
-
-//主题切换相关
-const isDark = useDark()
-const isdark = ref(isDark)
+<script setup>
+import { isdark, toggleDark } from "@/utils/index.js"
 </script>
