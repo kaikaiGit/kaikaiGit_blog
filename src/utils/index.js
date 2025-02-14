@@ -22,12 +22,11 @@ export function throttle(fn, delay) {
 };
 
 /* 主题相关 */
-import { ref, nextTick } from 'vue'
+import { nextTick } from 'vue'
 import { useDark } from '@vueuse/core' //主题切换相关
 
 //主题切换相关
-const isDark = useDark()
-export const isdark = ref(isDark)
+export const isdark = useDark()
 
 export function toggleDark(event) {
   // @ts-expect-error experimental API

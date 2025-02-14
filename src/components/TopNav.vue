@@ -51,10 +51,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { useViewportStore } from '../stores/viewPort'
-import { useDark } from '@vueuse/core' //主题切换相关
-
-/* 主题切换相关 */
-const isDark = useDark()
+import { isdark as isDark} from "@/utils/index.js"
 
 /* 路由跳转相关 */
 const router = useRouter()

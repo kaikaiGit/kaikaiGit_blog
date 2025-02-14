@@ -180,10 +180,7 @@ import MyInternship from './components/HomeView/MyInternship.vue'
 import MyProjects from './components/HomeView/MyProjects.vue'
 import MyActivities from './components/HomeView/MyActivities.vue'
 import MyPrizes from './components/HomeView/MyPrizes.vue'
-import { useDark } from '@vueuse/core' //主题切换相关
 
-/* 主题切换相关 */
-const isDark = useDark()
 
 const navList = [
   {
