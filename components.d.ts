@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     CardBox: typeof import('./src/components/CardBox.vue')['default']
+    Cursor: typeof import('./src/components/Cursor.vue')['default']
     ElCarousel: typeof import('element-plus/es')['ElCarousel']
     ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
     ElCollapse: typeof import('element-plus/es')['ElCollapse']

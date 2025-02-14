@@ -28,6 +28,7 @@ onUnmounted(() => {
   <router-view></router-view>
   <!-- 装饰图 -->
   <img src="@/assets/images/dogIcon.svg" class="dogPic"/>
+  <cursor></cursor>
 </template>
 
 <style scoped>
