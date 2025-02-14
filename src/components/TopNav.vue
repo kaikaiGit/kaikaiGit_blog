@@ -68,7 +68,11 @@ const viewportStore = useViewportStore()
 
 <style lang="scss" scoped>
 .nav {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
   padding: 0 20px;
   gap: 10px;
+  backdrop-filter: blur(10px);
 }
 </style>
