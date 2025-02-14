@@ -37,7 +37,7 @@ const move = (event, root) => {
   position.value.distanceY = previousPointerY.value - position.value.pointerY;
   position.value.distance = Math.sqrt(position.value.distanceY ** 2 + position.value.distanceX ** 2);
 
-  curzr.value.style.transform = `translate3d(${position.value.pointerX}px, ${position.value.pointerY}px, 0)`;
+  if(curzr.value)curzr.value.style.transform = `translate3d(${position.value.pointerX}px, ${position.value.pointerY}px, 0)`;
 
   if (position.value.distance > 1) {
     rotate(position.value);

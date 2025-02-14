@@ -22,7 +22,7 @@ export function throttle(fn, delay) {
 };
 
 /* 主题相关 */
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import { useDark } from '@vueuse/core' //主题切换相关
 
 //主题切换相关
