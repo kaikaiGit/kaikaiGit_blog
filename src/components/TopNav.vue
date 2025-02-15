@@ -41,10 +41,18 @@
       />
       <SvgIcon v-else iconClass="githubBlack" :style="{ width: '30px', height: '100%' }" />
     </a>
-    <div v-else class="flex-vertical" style="padding: 10px">
-      <SvgIcon v-if="!isDark" iconClass="menu" style="height: 20px; width: 20px" />
-      <SvgIcon v-else iconClass="menuBlack" style="height: 20px; width: 20px" />
-    </div>
+    <el-dropdown trigger="click" v-else>
+        <div class="flex-vertical" style="padding: 10px">
+          <SvgIcon v-if="!isDark" iconClass="menu" style="height: 20px; width: 20px" />
+          <SvgIcon v-else iconClass="menuBlack" style="height: 20px; width: 20px" />
+        </div>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item @click="NavToCollections"><i class="iconfont icon-chuangyi" style="margin-right: 10px"></i>作品</el-dropdown-item>
+            <el-dropdown-item divided @click="NavToRecommend"><i class="iconfont icon-tuijian" style="margin-right: 10px"></i>推荐</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+    </el-dropdown>
   </el-menu>
 </template>
 

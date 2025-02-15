@@ -10,6 +10,7 @@ const viewportStore = useViewportStore()
 // 防抖后的更新函数
 const debouncedUpdateWidth = debounce(viewportStore.updateWidth, 100);
 
+debouncedUpdateWidth()
 /* 监听视口宽度变化 */
 // 添加 resize 事件监听
 onMounted(() => {
