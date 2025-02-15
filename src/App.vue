@@ -92,7 +92,7 @@ getStar()
 
 .bottom {
   background-color: rgba(255,255,255,0.2);
-  margin: 0 auto 30px;
+  margin: 0 auto;
   padding: 30px;
   max-width: 1000px;
   border-radius: 10px;

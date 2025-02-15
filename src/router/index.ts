@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router
 import HomeView from '@/pages/HomeView.vue'
 import WorkCollection from '@/pages/WorkCollection.vue'
 import Recommend from '@/pages/Recommend.vue'
+import NotCompleted from '@/pages/NotCompleted.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -14,12 +15,19 @@ const router = createRouter({
     {
       path: '/collections',
       name: 'collections',
-      component: WorkCollection
+      component: WorkCollection,
+      redirect: '/notCompleted',
     },
     {
       path: '/recommend',
       name: 'recommend',
-      component: Recommend
+      component: Recommend,
+      redirect: '/notCompleted',
+    },
+    {
+      path: '/notCompleted',
+      name: 'notCompleted',
+      component: NotCompleted
     }
   ]
 })
