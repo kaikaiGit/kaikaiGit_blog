@@ -23,7 +23,7 @@ onMounted(() => {
 	DrawWordCloud(ciYun.value)
 })
 
-function DrawWordCloud(ciYun: WordCloudData[]) {
+function DrawWordCloud(data: WordCloudData[]) {
     let myChart = echarts.init(document.getElementById('wordcloud'));
 
     const newResize = debounce(myChart.resize, 300)
@@ -71,7 +71,7 @@ function DrawWordCloud(ciYun: WordCloudData[]) {
               }
           },
           // Data is an array. Each array item must have name and value property.
-          data: ciYun.value
+          data: data
       }]
     })
 }

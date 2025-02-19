@@ -4,7 +4,7 @@ import { useDark } from '@vueuse/core'; // 主题切换相关
 /* 防抖函数 */
 export function debounce<T extends (...args: any[]) => any>(fn: T, delay: number): (...args: Parameters<T>) => void {
   let timer: ReturnType<typeof setTimeout> | null = null;
-  return function (...args: Parameters<T>) {
+  return function (this: any, ...args: Parameters<T>) {
     if (timer) clearTimeout(timer); // 清除之前的定时器
     timer = setTimeout(() => {
       fn.apply(this, args); // 延迟执行
