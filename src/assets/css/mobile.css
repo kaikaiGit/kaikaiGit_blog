@@ -9,7 +9,7 @@ html {
   html .dogPic {
     display: none;
   }
-  .body nav.homeNav, .body .card .el-tag {
+  .body nav.homeNav, .body .card .el-tag, .body .el-carousel > ul.el-carousel__indicators {
     display: none;
   }
   .body .container .mainInfo {
