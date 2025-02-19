@@ -197,5 +197,5 @@
 </style>
 
 <script setup>
-import { isdark, toggleDark } from "@/utils/index.js"
+import { isdark, toggleDark } from "@/utils/index.ts"
 </script>

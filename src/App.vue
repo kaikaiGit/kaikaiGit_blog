@@ -2,7 +2,7 @@
 import { RouterView } from 'vue-router'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useViewportStore } from './stores/viewPort'
-import { debounce } from '@/utils/index.js'
+import { debounce } from '@/utils/index'
 
 const viewportStore = useViewportStore()
 

@@ -6,23 +6,24 @@
 import { toRefs, onMounted } from 'vue'
 import * as echarts from 'echarts';
 import 'echarts-wordcloud';
-import { debounce } from '@/utils/index.js'
+import { debounce } from '@/utils/index'
 
-const props = defineProps({
-  ciYun: {
-    type: Array<{name,value}>,
-    default: '',
-    required: false
-  }
-});
+interface WordCloudData {
+  name: string;
+  value: number;
+}
+
+const props = defineProps<{
+  ciYun: WordCloudData[];
+}>();
 
 const { ciYun } = toRefs(props)    //把props数据解构出来，toRefs实现动态变化
 
 onMounted(() => {
-	DrawWordCloud(ciYun)
+	DrawWordCloud(ciYun.value)
 })
 
-function DrawWordCloud(ciYun) {
+function DrawWordCloud(ciYun: WordCloudData[]) {
     let myChart = echarts.init(document.getElementById('wordcloud'));
 
     const newResize = debounce(myChart.resize, 300)

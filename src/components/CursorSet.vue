@@ -10,7 +10,7 @@
 
 <script setup>
 import { ref, reactive, onMounted, onBeforeUnmount } from 'vue';
-import { throttle } from '@/utils/index.js'
+import { throttle } from '@/utils/index.ts'
 
 const curzr = ref(null);
 const position = ref({

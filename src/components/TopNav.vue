@@ -59,7 +59,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { useViewportStore } from '../stores/viewPort'
-import { isdark as isDark} from "@/utils/index.js"
+import { isdark as isDark} from "@/utils/index"
 
 /* 路由跳转相关 */
 const router = useRouter()

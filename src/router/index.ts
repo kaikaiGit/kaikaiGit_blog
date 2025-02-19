@@ -17,12 +17,14 @@ const router = createRouter({
       name: 'collections',
       component: WorkCollection,
       redirect: '/notCompleted',
+      children: []
     },
     {
       path: '/recommend',
       name: 'recommend',
       component: RecommendWork,
       redirect: '/notCompleted',
+      children: []
     },
     {
       path: '/notCompleted',
