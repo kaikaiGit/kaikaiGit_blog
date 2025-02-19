@@ -82,7 +82,7 @@ getStar()
   <!-- 装饰图 -->
   <img src="@/assets/images/dogIcon.svg" class="dogPic"/>
   <!-- 光标拖尾效果 -->
-  <cursor></cursor>
+  <cursor-set></cursor-set>
 </template>
 
 <style lang="scss" scoped>
