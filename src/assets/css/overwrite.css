@@ -1,0 +1,14 @@
+/* 用于覆盖element-ui的样式 */
+.el-menu--horizontal .el-menu-item:not(.is-disabled):focus {
+  background-color: transparent;
+}
+
+.el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+  --el-menu-hover-bg-color: transparent;
+}
+
+/* 用于覆盖element-ui的主题色 */
+:root {
+  --el-menu-hover-bg-color: transparent;
+  --el-menu-hover-text-color: #b7d9b1;
+}

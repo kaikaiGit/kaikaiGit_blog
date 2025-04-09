@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4635539 */
+  src: url('@/assets/iconfont/iconfont.woff2?t=1739623897508') format('woff2'),
+       url('@/assets/iconfont/iconfont.woff?t=1739623897508') format('woff'),
+       url('@/assets/iconfont/iconfont.ttf?t=1739623897508') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-tuijian:before {
+  content: "\e60f";
+}
+
+.icon-chuangyi:before {
+  content: "\e928";
+}
+
+.icon-xuexiao_xuexiaoxinxi:before {
+  content: "\e661";
+}
+
+.icon-ziliao:before {
+  content: "\e65f";
+}
+
+.icon-html5:before {
+  content: "\e601";
+}
+
+.icon-git:before {
+  content: "\e77f";
+}
+
+.icon-material-ui:before {
+  content: "\e7e6";
+}
+
+.icon-sass:before {
+  content: "\e606";
+}
+
+.icon-css:before {
+  content: "\e653";
+}
+
+.icon-bootstrap:before {
+  content: "\e683";
+}
+
+.icon-node:before {
+  content: "\f1fc";
+}
+
+.icon-java:before {
+  content: "\e614";
+}
+
+.icon-python:before {
+  content: "\e615";
+}
+
+.icon-vue:before {
+  content: "\e69a";
+}
+
+.icon-react:before {
+  content: "\e712";
+}
+
+.icon-redux:before {
+  content: "\ec7d";
+}
+
+.icon-typescript:before {
+  content: "\ecef";
+}
+
+.icon-zhishi:before {
+  content: "\e813";
+}
+
+.icon-cyuyan:before {
+  content: "\e61a";
+}
+
+.icon-outline-java-script:before {
+  content: "\e704";
+}
+
+.icon-uniapp:before {
+  content: "\e6af";
+}
+
+.icon-element-plus:before {
+  content: "\e67c";
+}
+
+.icon-pinia:before {
+  content: "\e60c";
+}
+
+.icon-jishuzhan:before {
+  content: "\e672";
+}
+
+.icon-jibenxinxi:before {
+  content: "\e659";
+}
+
+.icon-project:before {
+  content: "\e63d";
+}
+
+.icon-zhuanyejineng:before {
+  content: "\e617";
+}
+
+.icon-rongyu:before {
+  content: "\e607";
+}
+
+.icon-kejiluntan:before {
+  content: "\e612";
+}
+
+.icon-shixi:before {
+  content: "\e600";
+}
+
+.icon-ego-menu:before {
+  content: "\e605";
+}
+
+.icon-github-fill:before {
+  content: "\e885";
+}
+
