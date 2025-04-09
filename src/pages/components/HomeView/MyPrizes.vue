@@ -65,6 +65,33 @@
           style="object-fit: cover"
         />
       </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/prize8.jpg"
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/prize9.jpg"
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
+
+      <el-carousel-item>
+        <img
+          src="@/assets/images/prize10.jpg"
+          height="100%"
+          width="100%"
+          style="object-fit: cover"
+        />
+      </el-carousel-item>
     </el-carousel>
   </div>
 </template>
