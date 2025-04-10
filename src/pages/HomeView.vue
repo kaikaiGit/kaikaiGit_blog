@@ -16,7 +16,7 @@
         :key="item.id"
         :is="item.component"
         :id="item.id"
-        style="margin-bottom: 40px"
+        style="margin-bottom: 10px"
       />
     </div>
   </div>
@@ -33,6 +33,8 @@
 }
 
 .body {
+  margin-bottom: 50px;
+
   .banner {
     margin: 0 auto;
     padding: 30px;

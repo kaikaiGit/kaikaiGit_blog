@@ -99,17 +99,17 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 
-const picHeight = ref('400px')
+const picHeight = ref('600px')
 
 const calPicHeight = () => {
   const picBox = document.querySelector('#picCarousel')
   if (!picBox) return
-  if(picBox.clientWidth > 600){
-    picHeight.value = `${600 * 0.72}px`
+  if(picBox.clientWidth > 700){
+    picHeight.value = `${700 * 0.74}px`
   }
     
   else
-    picHeight.value = `${picBox.clientWidth * 0.75}px`
+    picHeight.value = `${picBox.clientWidth * 0.8}px`
 }
 
 onMounted(() => {
@@ -127,7 +127,7 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 #picCarousel {
-  max-width: 600px;
+  max-width: 700px;
   margin-inline: auto;
 }
 </style>

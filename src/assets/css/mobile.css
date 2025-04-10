@@ -2,6 +2,10 @@ html {
   font-size: 16px;
 }
 
+html .el-carousel > ul.el-carousel__indicators {
+  display: none;
+}
+
 @media screen and (max-width: 540px) {
   html {
     font-size: 12px;
@@ -9,7 +13,7 @@ html {
   html .dogPic {
     display: none;
   }
-  .body nav.homeNav, .body .card .el-tag, .body .el-carousel > ul.el-carousel__indicators {
+  .body nav.homeNav, .body .card .el-tag {
     display: none;
   }
   .body .container .mainInfo {

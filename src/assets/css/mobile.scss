@@ -1,5 +1,9 @@
 html {
   font-size: 16px;
+
+  .el-carousel>ul.el-carousel__indicators{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 540px){
@@ -11,7 +15,7 @@ html {
     }
   }
   .body {
-    nav.homeNav, .card .el-tag, .el-carousel>ul.el-carousel__indicators{
+    nav.homeNav, .card .el-tag {
       display: none;
     }
   }

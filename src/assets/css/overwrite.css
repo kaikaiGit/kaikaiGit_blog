@@ -12,3 +12,7 @@
   --el-menu-hover-bg-color: transparent;
   --el-menu-hover-text-color: #b7d9b1;
 }
+
+h1 {
+  padding-top: 50px;
+}
